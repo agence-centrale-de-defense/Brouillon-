@@ -1,0 +1,4760 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adrien Koechler-Reeb</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+  extensions: ["[a11y]/accessibility-menu.js","[tex]/configmacros.js"],
+  AssistiveMML: {disabled: true},
+  "fast-preview": {disabled: false},
+  tex2jax: {
+    inlineMath: [['$','$'],['\\(','\\)'],
+    displayMath: [['\\[','\\]']]
+  },
+  menuSettings: {autocollapse: true}
+});
+</script>
+  <script id="MathJax-script" async src="es5/tex-svg.js"></script>
+</head>
+<link rel="stylesheet" href="black.css">
+<script type="text/javascript" src="Gmatrix.js"></script>
+<!--Phc[monoide comutative]-->
+\(\newcommand{\Phc}[1]{\varpi_{#1}}\)
+\(
+\newcommand{\phcm}[3]{\Phc{#1}\left(#2,#3\right)}
+\) 
+<!--
+les macro pour les enrichissement :
+-->
+  \(
+          \def\VarInd{
+                \mathrm{Var}
+               } 
+           \) 
+           \(
+           \def\vpr{\mathrm{pr}}
+           \)
+
+\(\newcommand{\strf}[1]{\mathcal{F}^*\;#1}\)
+\(
+\newcommand{\strFun}[2]{\bar{#1}_{#2}}
+\)
+\(
+\newcommand{\strfun}[1]{\bar{#1}}
+\)   
+        
+\(
+\newcommand{\Clkpred}[3]{\mathrm{clk}_{{#1}_{#2,#3}}}
+\)   
+\(
+\newcommand{\clkpred}[1]{\mathrm{clk}_{
+#1}
+}
+\)
+<!--
+-->
+\(\def \LK{\mathrm{LK}}\) 
+<body>
+  <div class="head0">
+    <div>
+     אני עושה מתמטיקה היום
+ 
+    </div>
+    <div style="font-size:33px;color: rgb(255,255,255)">~~~~~~~~~~</div>
+    <name class="autorakr">\(A\)drien \(K\)oechler-\(R\)eeb-\(B\)ienaimer</name><br>
+<pre style='font-size: 8px;text-align:left;color:green;font-family: sans-serif;'>
+me contacter
+PHONE :
+[+337 45 03 91 90]
+i.e : 07.45.03.91.90 [France]
+Mail : [adrien.accid@gmail.com]
+
+D'autres moyen de me trouver :
+ 
+Mail de secours :
+( adelmanadok@gmai.com)
+[a utiliser uniquement lorsque vous n'arriver a me joindre!]
+Lieu :
+ a proximité de :
+    "Bures-sur-Yvette"
+     code postal : 91440
+     France.</pre>
+  </div>
+  <h1>\(\mathcal{L}\)<!--&nbsp;-->ivre de LOGIC et détails de mes lecture entrelacés de mon livre Le petit compte du prince que je veux être...</h1>
+  <div>
+    <br>
+    <div>
+      <span class='noteinf'>Les maths La<name>CHEFFE</name> notre gardienne
+      complètement autisme 
+      est presque mutique à
+      nous de l'interroger avec
+      un bon café aussi fort 
+      que nous avons du café. 
+      Moi le café je le consomme
+      illégalement 
+      la ou les foux 
+      sont enfermé moi le s.d.f 
+      enfermé et ( muselé <abbr>i.e. </abbr>je dois me taire 
+      sur le sadisme de cette hp... et ne jamais...)  
+      depuis plus de cinq ( ou six ) 
+      années enfermé 
+      pour des 
+      raisons administratives...
+      Et Le temps des cannons, maintenant
+      la gère mondial... 
+      Les trois derniers point
+      me semble être un 
+      pronostic sombre.</span>
+    </div>
+    <div>
+      <h2>
+      'Le calcul des prédicat est algorithmiquement séparable' 
+      </h2>
+      <div>
+        <h3>citation&nbsp;:</h3>
+        <div class='must'>
+          TODO..
+        </div>
+        
+        <h3>le contextes en détail</h3>
+       <div>
+         <p>
+        On vas donner 
+        une définition
+        formelle du calcul 
+        des prédicats 
+        (&nbsp;:<abbr>i.e.</abbr>
+        la logique 
+        du premier 
+        ordre.&nbsp;) 
+        Dans un premier temps
+        on vas utiliser 
+        le calcul des 
+        sequent dans le quel on vas
+        représenter la logique 
+        du premier ordre, mais attention
+        on veut représenté avec le calcul des prédicat avec 
+        ( dedans ) le calcul
+        des prédicat 
+        ensuite on va 
+        utiliser les 
+        grammaire de chomsky.
+        </p>
+        <p>
+        On vas d'abord définir 
+        une signature permettant
+        
+        de
+        représenter 
+        la logique du premier ordre.
+        
+        il et à noter que
+        les variables 
+        doivent représenter des prédicat!.</p>
+        <p>
+         On  vas juste représenté 
+         en les sequent 
+         l'aide d'un symbole noté 
+         \(\left[P\vdash_1 Q\right]\) 
+         pour les variables \(P, Q\) qui sont sensée représenter des prédicat. <span class='noteinf' >Ici&nbsp;:
+         le symbole
+         
+         \(\left[P\vdash_1 Q\right]\)
+         est sensé représenté
+         &lt;&lt;\(P\vdash Q\)&gt;&gt;
+         (<abbr>i.e.</abbr> \(P\) prouve \(Q\) 
+         </span>
+         On peut donc quantifier sur des prédicat, Mais pas des termes. 
+         </p>
+         <p>
+          
+           Ensuite prendre
+           deux symboles
+         \(F_\rightarrow\) celui ci est une symbole de fonction binaire
+         sensé représenter
+         l'implication
+         puis un symbole
+         de constante \(c_\bot\) 
+         pour représenté l'absurde.
+         </p>
+         <p class='noteinf'>Pour l'instant On&nbsp;(&nbsp;je&nbsp;) 
+         fait avec très peu de connecteurs
+         on va expliquer pour quoi...&nbsp;c'est en guise de <em>PETIT! </em> 
+         justificatif à une citation de <name>J-Y.G</name>: qui est <span style='display:block;font-style:italic;'>&lt;&lt; une logique avec peut de connecteurs n'est pas une logique&gt;&gt;</span> </p>
+         <div>
+        Donc pour faire synthétique&nbsp;: 
+        <ol>
+          
+          <li>On utilise un symbole de fonction \(f_\rightarrow\) sensé représenter l'implication.</li>
+          <li>un symbole de constante \(c_\bot\) sensé représenté l'absurdité.</li>
+          <li>
+            un symbole de prédicat noté \(X\vdash_1 Y\) pour les variables \(X\) et \(Y.\) 
+          </li>
+        </ol>
+        Donc voilà la signature de 
+        notre belle théorie.
+         </div>
+          <h3>En suite pour les Axiomes</h3>
+          <div>
+            
+            <ol>
+              <li>\[T_\mathrm{lAx}:=\left[ A\vdash_1 A\right].\]</li>
+              
+              <!--
+              Au sujet
+              de la guerre 
+              je suis pour ma
+              survie. 
+              À vous de m'aider...
+              -->
+              <li>On pose 
+              \(F_\vee
+              \left(x, y\right):=
+              f_\rightarrow 
+              \left(f_\rightarrow\left(x, c_\bot\right), y\right)\) on a défini ici un synonyme c'est pour ça que j'utilise un grand 
+              \(F.\) <span class='noteinf' style ='display:block;font-family :serif;
+              margin-bottom:11px;margin-top:8px;
+              '>
+                 ( lol 
+                 la sémantique 
+                 du <b>grand</b> et celle du <i>petit</i> nous 
+                 donnera du 
+                 travail c'est déjà faire un peu de
+                 la logique car c'est juste 
+                 pour 
+              signaler 
+              que le synonyme définit 
+              est à 
+              prouvé 
+              équivalent à la disjonction dans le système \(\mathrm{LK}\). Mais on peut parfois pousser un peu plus avec &lt;&lt;la sémantique du gras et de l'italique&gt;&gt;<sub>J-Y.G</sub>
+              ( Voir les points aveugle 
+              par exemple ) 
+              De <name>Richard</name>à <name>Gödel</name>, 
+                moi aussi les synonyme 
+              j'en fait tout une histoire, c'est quoi... )</span>
+              \[
+              T_{\rightarrow^-_i} 
+              :=
+              \left[
+              F_\vee\left(
+             \Gamma , A\right) 
+              \vdash_1 B
+              \Rightarrow 
+              \Gamma \vdash_1 f_\rightarrow\left(A, B\right)\right] 
+              \] on check avec une table de vérité 
+              de&nbsp;: \[p\left(\gamma, a, b\right):=\left[\left(\gamma\vee a\right) \rightarrow b\right] \rightarrow \left[\gamma\rightarrow \left( a\rightarrow b\right) \right] \]
+              pour que la formule principale à droite ( entre les deux crochets ) soit de valeur \(\bot\) il faut est il suffit que \[\gamma:=\top;a:=\top;b:=\bot\] 
+              donc dans ce cas là \(\left(\gamma\vee a\right) \rightarrow b=\bot\) donc \(p\) est une tautologie.
+              On et entrain 
+              bien sur de montrer 
+              que ce 
+              type de méthode fonctionne. On va par contre définir un autre synonyme&nbsp;:
+              \[
+              \Gamma_0,\Gamma_1,..., \Gamma_p
+              \vdash 
+              F:=
+              
+               F_\wedge\left(\Gamma_0,F_\wedge\left(\Gamma _1,...\right)
+               \right) \vdash F
+              \] 
+              avec \(F_\wedge\left(x, y\right):=f_\rightarrow \left[f_\rightarrow\left(x, f_\rightarrow\left(y, c_\bot\right)
+              \right)\right].\) 
+              </li>
+              <li>
+              \[
+              T_{\rightarrow_i}:=\Gamma, A\vdash_1 B\Rightarrow \Gamma \vdash_1 f_\rightarrow\left(A, B\right).
+              \] 
+                 </li>
+                 <li>
+                   \[T_{\rightarrow_e}
+                   :=
+                   \left\{
+                   \left[
+                    \Gamma \vdash_1 A\right]
+                   \wedge
+                   \left[
+                   \Gamma \vdash_1 f_\rightarrow\left(
+                   A, B
+                   \right) 
+                   \right]
+                   \right\} 
+                   \Rightarrow 
+                   \left[\Gamma \vdash_1 B\right]. 
+                   \] 
+                 </li>
+                 <li>
+                   \[T_\bot:=\left[\Gamma\vdash_1 A\right] \wedge
+                   \left[\Gamma
+                   \vdash_1 f_\rightarrow 
+                   \left(A, c_\bot\right) \right] \Rightarrow \left[\Gamma \vdash_1 c_\bot\right] .\] 
+                 </li>
+                 <li>
+                   \[T_{\neg_i}
+                   :=\left\{\left[\Gamma, f_\rightarrow\left(A, c_\bot\right)
+                   \vdash_1 c_\bot\right]\right\} \Rightarrow \left[\Gamma\vdash_1 A\right] \] 
+                   
+                 </li>
+            </ol>
+          
+          <p>
+          En suite on va définir les quantification de la façon suivante&nbsp;:
+          On se donne 
+          un ensemble 
+          symboles 
+          \(\Lambda_x;x\in \mathbb{N}\)
+          de fonction unaire, 
+          pour représenté 
+          la quantification
+          universelle
+          sur une variable ici, 
+          dans un alphabet 
+          de symbole représenté 
+          par des entiers naturels.</p>
+          <div>
+            On vas donner les deux règles de déduction de la logique naturelle&nbsp;:
+            <ol>
+              <li>
+                \[
+                T_{\forall_i}
+                :=   
+                \left\{\left[x\notin \mathrm{vl}\;\Gamma\right]\wedge 
+                \left[
+                \Gamma\vdash_1 A\right] \right\}\Rightarrow \left[\Gamma \vdash_1 \Lambda_x A
+                \right] 
+                \] 
+              </li>
+              <li>
+                \[T_{\forall_e}
+                :=
+                \left[\Gamma \vdash_1 \Lambda_x A\right]\Rightarrow 
+                \left\{\mathrm{term}\left(t\right)\Rightarrow \left[\Gamma\vdash_1 \mathrm{sub}\left(x, t, A\right)\right] \right\} 
+                \] 
+              </li>
+              où les règle de déduction associé au prédicat \(\left[x\notin \mathrm{vl}\;\Gamma\right]\) 
+              sont définies de la façon suivante&nbsp;:
+              <li>
+         \[T_{\text{nvl}}:=\left[x\notin \mathrm{vl}\;\Lambda_x P\right]\] pour chaque entier \(x\) 
+              </li>
+            </ol>
+            puis la règle sub est défini de la façon suivante&nbsp;:
+            <ol>
+              <li>
+            \[T_\mathrm{subeq}:=\Gamma \vdash_1\left[\left(\mathrm{sub}\left(x, t, E\right)\Leftrightarrow E\right)\right]\Leftrightarrow \left[x\simeq t\right].\] 
+            </li>
+            <li>
+              \[\Gamma \vdash_1\mathrm{sub}\left(x, t, A\right)\Leftrightarrow \left(\left(x\leftarrow t\right) \Rightarrow A\right)\] 
+              ici le symbole \(\left(x\leftarrow t\right)\) sera interprété comme une substitution de \(x\) par \(t\) sur chaque sous-formule à partir de de la hauteur de \(\left(x\leftarrow t\right) \) <span class='noteinf' >&lt;&lt;c'est une affectation en quelques sortes&gt;&gt;</span>
+              <span class='noteinf'>plus justement on va expliquer comment modifier la sémantique propositionele pour donner un sens à cette notation puis montrer la separabilité algorithmiquement du calcul des sequent un peu comme avec la preuve préférée de [<name>j-y g</name>]. même si à <i>l'instant</i> ou je rédige cela je ne sais pas si mon idée tient la route celle qui me vient en premier temps et de prendre des fonctions booléene dont on définit des pondération de hauteur à chaque variable pour obliger a rendre les différents sous formule de celle qu'elle représente d'être à à la hauteur...
+              mon idée et de donner un sens de chaque variable par si une variable et représente de \(\left(x\leftarrow t\right)\)
+              alors on veut que la pondération de son hauteur soit fixée de telle manière à en conserver le sens.
+              et bien sur cela pourrait être un exemple d'une logique avec des bons connecteurs...</p>
+            </li>
+            
+            </ol>
+            <h3>Les algèbre \(\mathbb{B} _n\left\{h\right\}\) </h3>
+            <div>
+              <p>Si on se donne une famille fonction \(\left(h_j\right)_{j\in J} \) de \(n\) vers \(\mathbb{N}\) puis si on se donne un système complet de connecteurs booléen \(C\) alors on dit q'une fonction booléen \(f\) de \(\mathbb{B}^I\) vers \(\mathbb{B}\) est \(\left(h_i\right)\)-fidèle sur \(C\) si elles admet une représentation \(F\left(\underline v_i\right) \)  telle 
+              que pour tous \(i\in I\) chaque occurrence de variable \(v_{i}\) soit de hauteur \(h_j\left(i\right)+1\) pour au moins un \(j\in J.\)</p>
+              <p>Si il existe un ensemble de connecteurs \(C\) tel toute les toutes fonctions booléen à \(n\) variable sont \(h\)-fidèle alors on pose \(C\in\mathbb{B}_n\left\{h\right\}\).
+              On vas montrer que l'ensemble construit ainsi et non vide si on de complété \(h\) et on va chercher la plus petite.</p>
+              <h4>[PREUVE]</h4>
+              <div>
+                
+                On se donne une famille \(h_j;j\in J\) <!-- puis on pose \[k_m\left(i\right)=\mathrm{min}\left\{h_j\left(i\right);h_j\left(i\right)\geq m;j\in J\right\}
+                \]--> On va montrer que pour tous les fonction booléen sont \(h\)-fidèles sur le système suivant \(C_\text{Full} :=\left\{ 
+                p\left\{c, l\right\}\vert c\text{ est une fonction booléen d'ariter } l\right\}\) alors si on se donne une fonction booléen \(f\) a \(n\) variable on peut poser \(f:=\bar{p}_{f, n}\)
+                <!-- donc pour \(k_0\left(i\right):=0;i\in I\) on a prouvé le résultat si maintenant \(k_2\) est une famille vide alors sois \(k_1\) est vide on en reviens au cas précédent.--> Maintenant on se donne deux famille \(J_0,J_1\) et on définit&nbsp;:
+                \[B_{J_0, J_1}
+                \left(i\right) := =\begin{cases} 
+                          0\text{ si } i\in J_0\\
+                          1\text{ sinon.} \end{cases}\] 
+                          
+       <p> On vas montrer que pour tous famille \(\left(K_{0,s}, K_{1,s}\right)_s\in S\) avec \(K_{r, s}\subseteq I;s\in S;r:=0..1,\) alors&nbsp;:
+                          \[
+                          F_{K
+                          , S}:=\sum_{s\in S} B_{K_{0,s},K_{1,s}}
+                             \] 
+                             
+                             
+                             
+                             
+                             On peut supposer&nbsp;:
+                       \[\left(F_{K, S} \right)_{K\in M}=\left(h_{\sigma\left(K\right)}\right)_{K\in M} \] pour une \(\sigma\) est une bijection de \(M\) vers les indice de la famille \(h.\)
+                       
+                       
+                       
+                    toute famille non vide \(h\) comme précédemment peut être écrite de cette façon la ( somme de zéro et de un. )
+                    
+                    On prouve ainsi que 
+                     toute fonction booléene est h-fidèles sur \(C_\text{Full}\) car si \(S:=S_0\cup \left\{b\right\} \) 
+                             
+                    et que 
+                      le résultat a
+                      été prouvé pour 
+                      \(S_0\) alors on 
+                      a un connecteur
+                      \(p_{\mathrm{pr}_i, l} \) qui peut être utilisé pour augmenter de \(1\) la hauteur de la variable dans une formule équivalente.</p>
+                    <p>En effet il suffit de constaté que si une fonction booléen \(f\) est représenté par une formule \(F\left[v_0...v_q\right]\) ( en notation préfixe ) dans le système de connecteurs 
+                    \(C_\text{Full}\) alors on peut augmenter la hauteur de \(v_k\) avec le connecteur \(p_{\mathrm{pr}_{i, 1}} \) car en effet si \(F:=f_c...v_k...\) alors on peut remplacer l'occurrence de \(v_k\) par \(p_{i, 1} v_k\) lorsque \(B_{K_{0, b}, K_{1,b}}=1\)
+                    si non on ne change rien à cette occurrence.</p> 
+                    <p>On voit que si \(h_j\left(i\right)\leq 1\) pour au moins un \(j, \) alors  on peut prendre \[M:=\left\{\left(h^{-1}_j\left(\left\{0\right\}\right) , h^{-1}_j\left(\left\{1\right\}\right)\right), j\in J\right\} \] ce qui amorce la récurrence 
+                    la preuve est donc fini. <p>
+                    On à toujours&nbsp;:
+                    \[C_\text{Full} \in \mathbb{B}\left\{h\right\}.\] pour toutes famille \(h\) de fonction d'un segment initial strict non vide de \(\mathbb{N}\) vers \(\mathbb{N}\) </p>
+                  
+                <p>    
+                On  n'a pas non plus complétée la familles \(h\) mais on a construit un de ces éléments de façon un peu pathologique</p>
+                    <p>
+                    On  vas 
+                    regarder
+                    maintenant
+                    le cas des
+                    règle de déduction
+                    et la sémantisation 
+                   des prédicat 
+                   avec cette
+                   algèbre notamment
+                   dans 
+                   le 
+                   cas de l'affectation
+                   et 
+                   de
+                   la
+                   substitution dont on
+                   vas 
+                   ensuite lui donner 
+                   une valuation 
+                   binaire. 
+                   <span class='noteinf'>brocoli c'est sa, 
+                   de façon 
+                   plus générale pour répondre à
+                   <name>J-Y-G</name> &lt;&lt;je
+                   fais de la
+                   Débrocolisation universelle,
+                   c'est 
+                   de l'humour formelle 
+                   je ne plaisante
+                   pas je 
+                   désalgèbrise
+                   en algèbrisent,<br> 'VIVE LES BROCOLIS!.'  
+                   </span>
+                    </p>
+                    <h3>un système avec le connecteur \(\rightarrow\) et les connecteur \(\bot_p\) ( connecteur 
+                    constante à l'absurde à \(p\) variable. ) </h3>
+                    <div>
+                      <p>
+                     la cas de la formule du premier ordre \(\left(x\leftarrow t\right)\rightarrow A\)
+                     et à interpréter avec la règle&nbsp;:  \[\left[\Gamma\wedge \left(x\leftarrow t\right) \vdash_1 A\right] \Rightarrow \left[\Gamma\vdash_1 A\left[x/t\right]\right] \]
+                     <span class='noteinf'><b>#TODO </b>...plus de détails</span>
+                     <div style='border: solid 1px darkslategrey;padding: 3px;'>
+                       <h3 >'' le prime du dual et l'implication''</h3>
+                     <p>Pour donner un sens convenable à cela On vas construire une algèbre de <name>Bool</name> avec des fonctions, en effet si on se donne deux relations fonctionnelles \(P, Q\) alors on définit \(P\rightarrow Q\) de la façon suivante&nbsp;:
+                     <span class='noteinf'>
+                       Ici 
+                       la
+                       notation
+                       \(\left(P,Q\right)\) 
+                       désigne
+                       la
+                       relation 
+                       fonctionnelle&nbsp;: \[\lambda x.\left(P\left(x\right), Q\left(x\right) \right),\]  
+                       de 
+                       domaine
+                       l'intersection 
+                       du domaine de 
+                       \(P\) avec
+                       le 
+                       domaine 
+                       \(Q\)</span>
+                     
+                       On définit 
+                       alors&nbsp;:
+                     \[
+                     P\rightarrow Q:=
+                     \left(P^\prime, Q\right) 
+                     \] où \(P^\prime\) et une
+                     relation fonctionnelle
+                     telle que pour toutes
+                     relation
+                     fonctionnelle
+                     \(g\) de domaine 
+                     l'image 
+                     de \(P^\prime\)
+                     on ait&nbsp;:
+                     \[\left(
+                     P,
+                     g\circ P^\prime
+                     \right)\]
+                     injective 
+                     si est 
+                     seulement 
+                     si \(g\) 
+                     est une injection. On définit ainsi une collection \(\mathcal{C}_P\) de tel relation fonctionnelles \(P^\prime\) on est souvent obligé d'utiliser cette collection car en effet la définition de \(P^\prime\) en fonction de de \(P\)
+                     </p>
+                     <p>
+                     Si \[P=a\circ Q\] on a \(\left(P^\prime, a\circ Q\right)\) injective ainsi \(P\rightarrow Q\) est injective.</p>
+                     <p>
+                     On peu définir&nbsp;: 
+                     \[P\rightarrow_\mathcal{C} Q:=\lambda t.\lambda P^\prime
+                     \in \mathcal{C}_P
+                     
+             \left(
+                     P^\prime
+                     \left(t\right) 
+                     ,P^\prime,
+                     Q
+                     \left(t
+                     \right)
+                     \right)
+            .\] 
+                     
+                 On restreint souvent la collection 
+                 \(\mathcal{C}_P\)
+                     à la collection des applications de la collection des \(P\) par exemple 
+                     lorsque l'on se donne une structure \(M\) on peut parfois se contenter de&nbsp;:  
+           \[\mathcal{C}_{P,M}:=\mathcal{C}_P\cap \bigcup_{n,k\in \mathbb{N}} 
+           \left (M^k\right)^{M^n}\]
+           lorsque l'on fait le clocking d'un terme, On expliquera plus tard cette notion, mais ce n'est pas obligatoire car dans certain cas on peut avoir affaire à des extensions de \(M\).</p>
+           <p class='must'>
+             TODO{}
+             <br>[
+             se questionner à-propos des différentes sous-collection de 
+             \(\mathcal{C}_*\) est de leur intérêt et  nécessité, car en effet on peu parfois rencontrer des cas paradoxal de l'utilisation
+             d'une collection 
+             très grande.
+             Notamment 
+             cette 
+             collection
+             n'est pas
+             très bien
+             définie dans
+             le cas de
+             la théorie 
+             \(\mathrm{ZF}\) 
+             et peut
+             demander 
+             l'utilisation 
+             de <b>
+               l'axiome du choix
+               </b>...
+             <br>]
+           </p>
+           \(\newcommand{\rimp}[1]{
+           \rightarrow_{#1}}
+           \)
+           
+              \(
+      \def
+          \rightimp{\rightarrow_\mathcal{C}}
+                 \)
+                 
+ \(\def\leftimp{\leftarrow_\mathcal{C}}
+                     \)
+                     
+                     <p class='hidden'>
+                     on  définit la 
+                     \[P\rightarrow Q:=Q\rightarrow_* P\] l'injectiviter de \[P\rightarrow Q\] et équivalente à 
+                     \[
+                     P^\prime \rightarrow_* Q^\prime
+                     \]
+                     où \(Q^\prime\) est défini comme \(P^\prime.\)</p>
+                     <p class='hidden'>
+                     Ainsi 
+                     lorsque 
+                     on a un
+                     ensemble 
+                     \(F\)
+                     d'application
+                     on peut 
+                     remplacer \(F\) par \(F^\prime\) et dans ce cas \(u\rightarrow_* v\) et replacer par \(u^\prime \rightarrow_* v^\prime\)
+                     cette dernière est une injections lorsque 
+                     \(u^\prime \sqsubseteq v^\prime \) donc si est seulement \(v\sqsubseteq u\) <abbr>i.e.</abbr>
+                     \(u\rightarrow v\) est une injection.
+                     </p>
+                     <p>
+                    Maintenant si 
+                    \(\left(x_i\right)_{i\in I}\) et une famille de fonction alors \[
+                    \bot_I\left(\underline x\right) :=\lambda t\in \bigcap_{i\in I}\mathrm{Dom}\left(x_i\right).c_\bot
+                    \] 
+                    où \(c_\bot\) est une constante.
+                    </p><p>
+                     Ensuite si \(\left(t_k\right)\) est une famille de termes d'ariter \(\alpha_k\) alors on définit 
+                     \[t^+_k
+                     :=
+                     t_k \rightarrow_{\mathcal{C}_M}t_k
+                     \] Ici&nbsp;: On ( je ) a fait ce qu'on peut appeler le clocking de \(t_k\) ainsi \(t^+_k\) est injective.
+                     <span class='noteinf' >
+                       bien entendu 
+                       on
+                       a pas forcément 
+                       l'égalité entre&nbsp;:
+                       \(t^+_k
+                       t_{i_1}
+                       ..t_{i_{
+                       \alpha_k}}
+                       \) et
+                      \(\left(
+                      t_k t_{i_1}..\right)^+\) 
+                      </span>
+                      </p>
+                      <p>
+                        En suite si \[R\left(\underline x\right)\] 
+                        est
+                        un
+                        symbole
+                        de
+                        prédicat
+                        alors
+                        on peut
+                        lui
+                        donner
+                        une
+                        valeur
+                        fonctionnelle
+                   
+                        sur
+                        
+                        un
+                        modèle
+                        \(M\)
+                        et
+                        effet
+                        si
+                        sa
+                        valeur
+                        dans
+                        \(M\)
+                        est 
+                        \(R_M\)
+                        alors
+                        on
+                        définit
+                        sa
+                        valeur de la façon suivante&nbsp;: 
+            \[R
+            \left[
+            M\vert A
+            \right]
+            :=
+            \lambda x\in A^{R_M}.
+            \lambda i\in R_M.
+            x\left(i\right)
+            \cup
+            \lambda x\in A^{R^c_M}.
+            \lambda i\in R^c_M.
+            0_A
+            \] on peut par exemple prendre un des couplage de terme clocker disons&nbsp;: 
+            \[f:=\left(t^+_0...t^+_{k-1}\right)\] Puis prendre \(x:=f\) et 
+            calculer&nbsp;:
+            
+        \[R
+          \left(
+          t_0,...,t_{k-1}
+          \right)
+          \left[
+          M
+          \vert
+          \left\{0_A\right\}\sqcup \mathrm{Im}\;x
+          \right]
+          \left(x\right)
+          :=
+          \begin{cases}
+          x\left(i\right)
+          \text{ si } M\vDash \left(Rt_0..t_{k-1}\right)[\underline i]
+          \\
+          0_A\text{ sinon }
+          \end{cases}
+        \]
+        qui est donc injective sur 
+        \(
+        \left(
+         Rt_0...t_{k-1}
+        \right)_M
+        \) 
+        donc l'application&nbsp;: 
+         \[
+          \phi\left(R\right)
+          :=
+          \lambda i.
+          \lambda t_0,...,t_{k-1}.
+          R
+          \left(
+          t_0,..,t_{k-1}
+          \right)
+          \left[
+            M\vert * 
+          \right]
+          \left(
+          \prod_{j\lt k}t^+_j
+          \right)
+          \left(i\right).
+          \] 
+ <!--
+ [
+ -->       
+<span class='must'>TODO[1<sup>er</sup>]
+          <br>{<br>
+          ...étudie
+          cette application...
+          <br>
+          il est tout de même à constater que les termes deviennent variable 
+          <br>
+          [sub todo] :
+          ( on peut toujours essayer de voir cette approche c'est par la que je vais commencer à faire des constats )
+          <br>
+          <span class='noteinf'>
+          On constatera déjà que si \(i\neq i^\prime\) alors&nbsp;: 
+          
+      \[
+      \left(
+      \phi\left(R\right)
+      \left(i\right)
+      \right)
+      \left(\underline t\right)
+      \neq
+      \left(
+      \phi\left(i^\prime\right)
+      \right)
+      \left(\underline t\right)
+      \]
+      <em>lorsque&nbsp;:</em> \[M\vDash \left(Rt_0..t_{k-1}\right)\left(\underline w\right);w:=i,i^\prime.\]
+          </span>
+          <br>}</span></br><!--]-->
+          
+                    cela peut être un peu modifié pour être en accord avec les clocking, on peut justement définir le clocking de \(M\) de la façon suivante&nbsp;: 
+              \[
+            M^+:=  \left\{f^+\vert \exists n, n^\prime \in\omega :f: {M^n
+}\rightarrow {M^{n^\prime } }\right\}
+              \] 
+                On peut ensuite définir&nbsp;:
+                \[R^+_M:=\lambda k, f.\lambda i\in R_M\cup R^c_M.\begin{cases} 
+                    \left(k, i\right) \text{ si } f^+\in M^+; \left(k, i\right)\in \mathrm{Im}\;f^+\wedge i\in R_M \\
+                    0_A\text{ sinon.} 
+                   \end{cases} 
+                \] 
+                
+                      </p>
+                      <p>
+                        On suppose \(R_M\subseteq Q_M\) 
+                        puis 
+               \[R^+_M\left(k_0, f_1\right) =R^+_M\left(k_1, f_1\right)=y\] 
+               avec \(f_0, f_1 \in M^+\) 
+                        si \(y\left(i\right) =0_A\) alors on vois que
+                        trois cas non exclusif se présente&nbsp;:
+                        <ol>
+                          <li>\(\left(k_0, i\right)\notin \mathrm{Im}\; f^+_0\) 
+                          </li>
+                          <li>
+                            \(i\notin R_M\) 
+                          </li>
+                          <li>\(\left(k_1,i\right)\notin \mathrm{Im} \;f^+_1\)</li>
+                        </ol>
+                        si le deuxième n'est pas réalisé  alors \(Q^+_M\left( k_j, f_j\right)\left(i\right)=0_A;j:=0..1.\)  les deux autres cas  ne sont pas dépendent du choix des prédicat donc on a \[Q^+_M\left(k_j,f_j\right):=0_A\] pour \(j:=0..1\) <abbr>i.e</abbr> l'hypothèse d'égalité montre que si \(i\in R_M\) alors les cas (1) et (3) se sont produit. si \(i\in R_M\) on a par hypothèse \(i\in Q_M\) 
+                        donc on obtient&nbsp;:
+                      
+                      \[
+                      \forall f^+\in M^+;\forall \left(k, i\right)\in \mathrm{Im}\;f^+; \left[i\in R_M\Rightarrow
+                      Q^+_M\left(k, f\right)
+                      \left(i\right)=\left(k, i\right)
+                      =R^+_M\left(k, f\right)\right] 
+                      \] 
+                      donc
+                      <span class='blkmath'>
+                        \[M\vDash R\rightarrow Q\Leftrightarrow \forall f, k;\left[k, f\right]_{Q^+_M}\subseteq \left[k, f\right]_{R^+_M}.
+                        \]</span>
+                        pour 
+                        la réciproque on prend 
+                        un point
+                        de 
+                        \(R_M\) 
+                        qui n'est
+                        pas dans 
+                        \(Q_M\) 
+                        <em>si il 
+                        en existe
+                        </em> 
+                        puis on
+                        vois que
+                        cela implique la non
+                        inclusion 
+                        des 
+                        classes
+                      
+                      car 
+                      sur 
+                      se point, 
+                      on peut 
+                      choisir \(f, k\)
+                      qui ne 
+                      vérifie 
+                      le cas (1) évoquée 
+                      plus haut, 
+                      donc on voit 
+                      que 
+ \[
+ R^+_M\left(k,f\right)\left(i\right)
+ =
+ \left(k, i\right)
+ \] 
+ donc on ne peut pas faire 
+ varier \(k\) et obtenir 
+ une valeur identique. 
+ Mais puisque 
+ pour ces paramètre \(f, k, i\)
+ on a \(Q^+_M\) 
+ toujours nulle 
+ par hypothèse 
+ c'est donc absurde 
+ ( je vous laisse le 
+ soin de vérifier avec 
+ vôtre propre façon de détailler
+ (pour vu que vous résonner LK)...
+ </p><p>
+ On vas étudier la coupure dans \(\mathrm{LK}\) avec l'implication en et l'inclusion des des classes,par exemple on peut toujours remplacer une règle&nbsp;: 
+ \[
+ \frac{P_0\;\;...\;\;P_n}
+ {C}
+ \] où les \(P_0..P_n\) sont les prémisse de la règle et \(C\) sa conclusion par une implication de la forme \(P_0\wedge P_2...\wedge P_n\rightarrow C\) on vas expliquer cela en détail.
+ </p>
+ <p>
+   On peut tout 
+   de même constater 
+   que&nbsp;: 
+ \[\left(A\wedge B\right)\rightarrow C\] et 
+ équivalent à&nbsp;: 
+ \(\left(\neg A\vee \neg B\right)\vee B\) 
+ ce qui équivaut à&nbsp;: 
+ \[
+ \left(A\rightarrow C\right)
+ \vee 
+ \left(B\rightarrow C\right)
+ \]
+ on verra ce que cela implique lorsque on verra la propriété de plongée Boolenne.</p> <p> On  peut toujours réduire une règle de déduction lorsqu'on lui donne une valeur Boolenne par une règle de la forme&nbsp;: 
+ \[
+ \frac{R}{Q}
+ \] puis l'interprèter comme dans un système de Hilber <abbr>i.e.</abbr>
+ \[R\rightarrow Q\]
+ donc dans le cas de la coupure <abbr>i.e.</abbr>
+ \[
+ \frac
+ {
+ \Gamma\vdash A ,\Delta
+ \;\;
+       A,\Lambda\vdash \Pi
+  }
+  {
+  \Gamma,\Lambda\vdash \Delta,\Pi   
+  }\mathrm{cut}
+ \] ( on rappelle \(T\vdash F\) veut dire que tout modèle de \(T\) satisfait \(F.\) )</p>
+ <p>
+   <span class='noteinf' style='display: block;'>On utilise ici le cosimplex.</span>
+   On vas justement utiliser la propriété de plongée Boolenne pour constater certains propriété déjà on définit deux schéma de formules qui seront équivalente au prémisse de la coupure de la façon suivante&nbsp;: 
+     \[
+     \begin{cases}
+     F\left[
+     \underline{\gamma,a,\delta}
+     \right]
+     :=\gamma
+       \rightarrow 
+       \left(a \vee \delta\right)
+     \\
+     G\left[
+     \underline{a,\lambda,\pi}
+     \right]
+     :=\left(a\wedge \lambda\right)
+       \rightarrow 
+       \pi.
+     \end{cases}
+     \] ( j'ai utilisé des petite lettres pour signaler
+     que ce sont des
+     formule et pas des
+     liste de formule, 
+     on peut rencontrer une
+     <b>petite problématique</b> 
+     avec \(a\) car 
+     il <em>occupe</em> les deux
+     côtés des 
+     sequent!... )</p>
+     <p>
+     Puis un autre schéma de formule&nbsp;:
+     \[
+     C\left[
+     \underline{
+     \gamma,a,\delta,\lambda,\pi}
+     \right]
+     :=\left(\gamma\wedge \lambda\right)
+       \rightarrow 
+       \left(\delta \vee \pi\right).
+     \]
+     Ainsi on peut constater&nbsp;: 
+     \[
+     \begin{cases}
+     C^+_M\left[
+     \underline{\gamma,a,\delta,\lambda,\pi}
+     \right]
+     \leq
+     F^+_M
+     \left[
+     \underline{\gamma,a,\delta}
+     \right]
+     \\
+     C^+_M\left[
+     \underline{\gamma,a,\delta,\lambda,\pi}
+     \right]
+     \leq
+     G^+_M
+     \left[
+     \underline{\lambda,a,\pi}
+     \right]
+     \end{cases}
+     \] <em>ce</em> qui est équivalent à&nbsp;:
+     \[
+     C^+_M\left[
+     \underline{\gamma,a,\delta,\lambda,\pi}
+     \right]
+     \leq
+     F^+_M
+     \left[
+     \underline{a,\gamma,\delta}
+     \right]
+     \wedge 
+     G^+_M
+     \left[
+     \underline{a,\lambda,\pi}
+     \right].
+     \]
+     une question qui ce pose est de savoir si il existe une formule \(B\) tel que&nbsp;:
+     \[
+     C^+_M\left[
+     \underline{\gamma,a,\delta,\lambda,\pi}
+     \right]
+     \lt
+     B^+_M
+     \leq
+     F^+_M
+     \left[
+     \underline{a,\gamma,\delta}
+     \right]
+     \wedge
+     G^+_M
+     \left[
+     \underline{a,\lambda,\pi}
+     \right].
+     \]
+     ou éventuellement une partition
+     \(P\left(\gamma,a,\delta,\lambda,\pi\right)\)
+     tel que&nbsp;: 
+            \[
+     
+     C^+_M\left[
+     \underline{\gamma,a,\delta,\lambda,\pi}
+     \right]
+     
+     \lt
+     P
+     \left(
+     \gamma,
+     a,
+     \delta,
+     \lambda,
+     \pi
+     \right)
+     \lt
+     F^+_M
+     \left[
+     \underline{a,\gamma,\delta}
+     \right]
+     
+     \wedge 
+     G^+_M
+     \left[
+     \underline{a,\lambda,\pi}
+     \right].
+     \]
+     ou plus strictement si&nbsp;:
+         \[
+     
+     C^+_M\left[
+     \underline{\gamma,a,\delta,\lambda,\pi}
+     \right]
+     \lt
+     B^+_M
+     \left[\underline{
+     \gamma,
+     a,
+     \delta,
+     \lambda,
+     \pi}
+     \right]
+     \lt
+     F^+_M
+     \left[
+     \underline{a,\gamma,\delta}
+     \right]
+     \wedge 
+     G^+_M
+     \left[
+     \underline{a,\lambda,\pi}
+     \right]
+     .
+     \]
+     où ici \(B\) et un schéma ( je parle de schémas de densité cosimpléctique. ) 
+     <span class='noteinf'>on peut par exemple éjecter \(A\) dans la conclusion, en sommes on coupe et on conserve ce qui a été <i>pommer</i>!.</span></p>
+     <p>
+     <mark>Un des débats est clos</mark> on peut constater que la partions \(P\) existe, 
+     car si on se 
+     donne des 
+     prédicat 
+     \(\Gamma,A,\Delta,\Lambda,\Pi\)
+     alors on 
+     peut toujours 
+     ce donner un 
+     \(P\) de 
+     la façon suivante&nbsp;: 
+     \[
+     P_u
+     :=
+     \lambda k,f.
+     \lambda i\in M^5.
+     \begin{cases}
+     \left(
+     k,
+     i,
+     u_1\left(k,i,f\right)
+     \right)
+     \text{ si }
+     \left(k,i\right)
+     \in
+     \mathrm{Im}\;f^+
+     \text{ et }
+     i\in V
+     \\
+     u_0\left(k,i,f\right)\text{ sinon. }
+     \end{cases}
+     \] 
+ où
+    \(
+    V
+    :=
+    \left(F\wedge G\right)_M
+    \) et \(u\) <mark>bien choisi.
+    </mark>
+    d'ailleurs on peut par exemple 'éjecter' suffisamment d'informations de \(a\) par exemple on peut prendre \(f\circ A^+_M\) 
+    mais dans le cas où \(a\in \mathbb{B}_2\) c'est pas intéressant car impossible on vas justement prendre \(a:=a\left(\underline v\right)\) pour des variables \(v_{i:=0,1,2..l-1}\) dans \(\mathbb{B}_2\) ( je(<name>AK-R </name>) vais faire sa maintenant avec un pseudo-code pour énuméré les fonction \(f\) )
+    </p>
+    <h5>l'algorithme prety-cut&nbsp;:</h5>
+    <div>
+      <p>
+      l'idée de la méthode&nbsp;:
+      consiste prendre une base d'un cosimplex puis à en trouver une autre en fonction des relation entre les variables utilisé dans la coupure.
+      </p>
+      <p>
+        notre base de départ est celle qui est constitué par les&nbsp;: 
+        \[
+        P_{x,y}\left[U\right]
+        :=
+        \left\{\left\{x,y\right\}\right\}
+        \cup 
+        \left\{\left\{t\right\}\subseteq U\vert t\notin \left\{x,y\right\}
+        \right\};x,y\in U;x\neq y.
+        \]
+        On calcul le \(h:=\left(F\wedge G\right)^+_M\) puis on prend des applications injective sur les ensemble&nbsp;: 
+        \[
+        I_{x,y}:=\mathrm{Im}\left(h\right)\backslash \left\{x,y\right\}
+        \]
+        pour chaque paire \(\left\{x,y\right\}\subseteq \mathrm{Im}\left(h\right)\)
+        celle qui est constante sur \(\left\{x,y\right\}\) on la note \(\mathrm{ip}_{x,y}\) d'image  \[\left\{y\in \mathbb{N}\vert y\lt\mathcal{l}_{x,y}\right\}\]
+        elle est définie à une bijection près.
+        
+      </p>
+    </div>
+    <p>On vas justement 
+    étudié l'ensemble de ces \(u\) ''bien choisi'' on peut déjà constater que l'on peut mettre les classe de \(R^+_M\) pour une formule \(R\) sous la forme 
+    \[
+    \forall k,f;
+    \left[k,f
+    \right]_{R^+_M}
+    =
+    \begin{cases}
+    \left\{k\right\}
+    \times
+    \theta_{f,R}\left(k\right)
+    \text{ si } \mathrm{Im}\;R^+_M\left(k,f\right)\neq \left\{0_A\right\}
+    \\
+    \mathbb{0}_M\left(R\right)\text{ sinon. }
+    \end{cases}
+    \] avec 
+    \[
+    \mathbb{0}_M\left(R\right)
+    :=
+    \left\{
+    \left(k,f\right)
+    \in 
+    \mathrm{dom}\;R^+_M
+    \vert
+    \mathrm{Im}\;R^+_M
+    \left(k,f\right)=\left\{0_A\right\}
+    \right\}.
+    
+    \]
+    On notera cette forme de la partions \(\left(\mathbb{0},\theta\right)\) que l'on appelle le 
+    \(\mathbb{B}\)-couple libre.
+    
+    Il et important 
+    de constater que
+    l'image de 
+    \(\tau_{k,R}
+    :=
+    \lambda f\in J_k.
+    \theta_{f,R}\left(k\right)
+    \) 
+    avec 
+    \[
+    J_k:=\left\{f;R^+_M\left(k,f\right)\neq\lambda i.0_A\right\}.
+    \]
+    correspond à une partition vérifient&nbsp;: 
+    \[
+    \forall k,f\in J_k;f\in \tau_{k,R}\left(f\right).
+    \]
+    <span class='noteifn'>
+    ( j'ai souvent omis les domaine de quantification sur \(k,f\) 
+    il sont supposé
+    dans le domaine 
+    \(R^+_M\) )
+    </span>
+    On vas démontrer  
+    ça tout de suite et en dire plus.
+    </p>
+    <h5>[PREUVE]</h5>
+    <div>
+      si 
+      \[
+      R^+_M\left(k_0,f_0\right)
+      =
+      R^+_M\left(k_1,f_1\right)
+      \]
+      alors deux cas se présente&nbsp;: 
+      <ol>
+        <li>
+          \[
+          \mathrm{Im}\;R^+_M
+          \left(
+          k_j,f_j
+          \right)
+          =
+          \left\{0_A\right\};j:=0..1.\]
+       </li>
+       <li>
+         \[
+         \mathrm{Im}\;
+         R^+_M\left(k_j,f_j\right)
+         =
+         \left\{k_j\right\}\times Y_R\left(k_j,f_j\right);j:=0..1.
+         \] pour deux ensembles
+         \(Y_{R}\left(k_j,f_j\right)\)
+         donc dans ce cas on a \(k_0=k_1\) et on a aussi&nbsp;: 
+         \[Y_R\left(k_0,f_0\right)=Y_R\left(k_1,f_1\right).\]
+       </li>
+      </ol>
+      <p>
+        On peut constater qu'à partir du  cas (2) président 
+        on a&nbsp;: 
+        \[
+        k_0\neq k_2
+        \Rightarrow 
+        \mathrm{Im}\left(R^+_M
+        \left(k_0,f_0\right)\right)
+        \cap 
+        \mathrm{Im}\left(R^+_M\left(k_2,f_2\right)\right)
+        =
+        \emptyset
+        \]
+        puis dans le cas (1)
+        on a&nbsp;: 
+        \[
+        \mathrm{Im}\left(R^+_M
+        \left(k_0,f_0\right)\right)
+        \cap 
+        \mathrm{Im}\left(R^+_M\left(k_2,f_2\right)\right)
+        =
+        \left\{0_A\right\}.
+        \]
+       donc déjà pour simplement constater que l'image de 
+       \(\tau_{k,R}\) est une partition il suffit
+       de tout simplement 
+       constater que c'est
+       une sous-partions de la partitions 
+       formé par \(R^+_M.\)
+       <span class='CQFD'>\(\square.\)</span>
+       </p>
+       <p>
+       Maintenant pour en dire plus on vas s'interroger sur les relations entre les \(Y_R\) définit plus Haut.
+       On peut déjà remarquer que&nbsp;: 
+       \[
+       \forall \left(k,f,i\right)\in D^+_M\left(R\right);
+       \left[
+       i\in Y_R\left(k,f\right)
+       \Leftrightarrow 
+       \left(
+       R^+_M\left(k,f\right)
+       \right)\left(i\right)=\left(k,i\right)\text{ et }i\in R_M
+       \right].
+       \]
+       <p>
+       On constatera aussi que 
+       si \(R^+_M\) est injective sur&nbsp;:
+       \[
+       X\cup Y_R\left(k,f\right)
+       \] avec 
+       
+       \(
+       \left(k,f\right)
+       \in
+       d^+_M\;R
+       \) 
+       et 
+       \(X\subseteq D_M\;R,\)
+       alors&nbsp;: 
+       <span class='blkmath'>
+         \[\# X\leq 1.\]
+       </span>
+       </p>
+      <p>Si 
+       \(X
+       \subseteq 
+       D_M\left(R\right)\)
+       est un singleton alors&nbsp;: 
+       \[
+       R^+_M\left(k,f\right)
+       \] 
+       est injective sur 
+       \(
+       X\cup Y_R\left(k,f\right).
+       \)
+       </p>
+       <p>
+        Pour tous 
+       \(X\subseteq D_M\left(R\right)\)
+       alors \(R^+_M\left(k,f\right)\upharpoonright X\) est constante si et seulement&nbsp;:
+       <span class='blkmath'>
+       \[
+          X
+          \cap 
+          Y_R\left(k,f\right)
+          =
+          \emptyset.
+       \]
+       </p>
+       </p>
+                <!--<span class='must'>TODO :
+        PAUSE...</span>-->
+      </p>
+      <p class='noteinf'>       
+      on va s'interroger sur la propriété du shifting,que de façon un peu trop imprécise correspond&nbsp;: 
+        si on se donne une
+        relation de bonne-ordre
+        sur 
+        \(D_M\left(R\right)\)
+        on peut toujours
+        trouvé un isomorphisme \(r\) de \(D_M\left(R\right)\) de bonne ordre 
+        vers un ordinal&nbsp;:  
+        \[
+        \alpha_M\left(M\right)
+        \] ( qui est unique )
+       tel que&nbsp;:
+       <span class='blkmath'>
+         \[
+         \sigma_n\left[M,R\right]:= \mathrm{pr}_1\circ R^+_M\left(k,f\right)
+         =r^{-1}\circ\left\{\lambda i
+         \in 
+         \alpha_M\left(R\right).
+         \begin{cases}
+         0\text{ si } s\left(i\right)\lt n
+         \\
+         j_n\left(i\right)\text{ sinon.}
+         \end{cases}\right\}\circ r
+         \]
+         </span>
+         pour une application \(j_n\) et \(s\) un isomorphisme de bonne ordre, puis un ordinal \(n.\)
+         On peut se représenté 
+         \(\sigma_n\) un peut comme une fonction de décalage par 
+         exemple \(\sigma_n\left(M,R\right)\left(n+x\right)=x\)
+         c'est pour cela que l'on appelle ça la propriété du shift.
+         l'ensemble \(\left\{\sigma_n\left(M,R\right)\vert R\text{ est  une formule de sur }M\right\}\)
+         et appel la variété de shifting de \(M\) et l'ensemble des \(n\) et appeler l'échelle de \(M,\)
+         lorsque que c'est un ordinal on dit que \(M\) est pré-dense si c'est un ordinal limite on dit tout simplement dense ,si c'est un non finit on dit tout simplement que \(M\) \(\omega\) suffisant.
+      </p>
+         <div style='display: block;text-align:left;font-family:console;background-color:rgb(0,9,2);color:rgb(200,200,200);'>
+           <mark>Pour faire un peu de vulgarisation</mark>
+           je peu dire que la propriété du <b>shifting</b> ramène toutes les mathématiques à une espèce d'espace de nombres <em>entier</em> 0,1,2,3,4,..111,112...jusqu'à l'infini...
+           
+           <mark style='color:grey;'>
+           ( qui parfois sont très grand <em>encore plus grand</em> que des nombre entier que l'on imagine )</mark>
+           par exemple si
+           je me donne des
+           équation..des 
+           formules ..des inéquations..des théorie..des inégalités..
+           
+           alors je vais 
+           pouvoir leur 
+           associer 
+           une espèce de nombre <b>et</b> une permutation c'est à dire une façon de mélanger des nombres..ensuite on obtient une espèce de courbes tout bêtement par exemple si je représente le nombre 5 par une courbe&nbsp;: 
+ <pre>
+           jusqu'à l'infini 
+           .
+          .
+         .
+        /
+       /
+ _____/
+ 0123456789.....
+ </pre>
+ je peu former une surface en faisant glisser dans l'axe vers la profondeur ce type de courbes qui parfois ce retrouver réarranger par exemple si la permutation échange 1 par 7 et 7 par 1 j'obtiendrai a partir de la dernière courbe la courbes s suivante&nbsp;: 
+ <pre>
+            jusqu'à l'infini 
+            .
+           .
+          .
+   _
+        /
+  _ ___/ _
+  0123456789.....
+  </pre>
+  et donc en prenant les deux derniers courbes je peu faire un morceau de ma surface en les juxtaposent dans l'axe de la profondeur...
+   </div>
+   <h5>la décomposition triadique des valuation cosimplétique</h5>
+   <div>
+     <p>On rappelle que&nbsp;: 
+     \[
+     \left(k,i\right)\in \mathcal{E}_M\Leftrightarrow
+     \left(
+     \exists g\in\mathcal{F}_M:
+     \left(k,i\right)\in\mathrm{Im}\;g^+
+     \right).
+     \]
+     \(\def\Std{\mathcal{E}}\)
+     </p>
+     On vas décomposer les \(F^+_M\)
+     en une triade de relation fonctionnelle.
+     En effet 
+     si on pose&nbsp;:
+     <ol style='margin-left:-8px;'>
+       <li>
+     \(
+     F^{\bot_0}_M
+     :=
+     \lambda i\notin F_M.\lambda k,f.
+     \begin{cases}
+     0_A\text{ si }
+     \left(k,i\right)\in\Std_M
+     \text{ et }
+     f\in\mathcal{F}_M\\
+      \text{non définit sinon.}
+     \end{cases}
+     \)
+     </li>
+     <li>
+     \(
+     F^{\bot_1}_M
+     :=
+     \lambda i\in F_M.\lambda k,f.
+     \begin{cases}
+     0_A\text{ si }\left(k,i\right)\notin 
+     \mathrm{Im}\; f^+
+     \text{ et }
+     \left(k,i\right)\in \Std_M
+     \text{ et }
+     f\in\mathcal{F}_M\\
+     \text{non définit sinon.}
+     \end{cases}
+     \)
+     </li>
+     <li>
+       On définit aussi  
+       \(
+       F^\bot_M
+       :=
+       F^{\bot_0}_M\cup F^{\bot_1}_M.
+       \)
+     </li>
+     <li>
+     \[
+     F^{\top}_M
+     :=
+     \lambda i\in F_M.\lambda
+     \left(k,f\right)\in G_i.
+     \left(k,i\right)
+     \]
+     avec 
+     \[
+     G_i
+     :=
+     \left\{\left(k,f\right)\in \mathrm{dom}\left(F^\bot\left(i\right)\right)
+     \vert
+     \left(k,i\right)\in\mathrm{Im}\;f^+
+     \right\}.
+     \]
+     </li>
+     </ol>
+     On a donc&nbsp;: 
+     \[
+     F^+_M
+     :=
+     \lambda k,f.\lambda i.
+     \left(\left(
+     F^{\bot_0}_M
+     \cup 
+     F^{\bot_1}_M
+     \cup 
+     F^\top_M\right)\left(i\right)\right)\left(k,f\right).
+     \]
+     où les domaine des trois relations fonctionnelle sont deux à deux disjoint.
+   </div>
+   <h5>les ordres de plongée</h5>
+   <div>
+     <h6>Définition&nbsp;: </h6>
+     <div>
+       <p>
+         pour \(i:=0..1\)
+         On vas juste définir les pseudo-projecteur de la façon suivante&nbsp;: 
+         \[
+         \mathrm{pr}^\prime_i
+         := \lambda x.
+         \begin{cases}
+         0_A\text{ si } x=0_A\\
+         \mathrm{pr}_i\left(x\right)
+         \text{ sinon. }
+         \end{cases}
+         \] où on utilisera la convention que le premier projecteur est 
+         \(\mathrm{pr}_0\)
+         et on suppose que les 
+         \(\mathrm{pr}_i;i:=0..1,\)
+         sont les projecteur sur \[\mathcal{D}_{01}\left(M\right):=\mathrm{dom}\;R^+_M\] pour n'importe quelle formule de \(M,\) dans le cas où on veut spécifié \(M\) on écrit juste \(\mathrm{pr}_{i;M};\mathrm{pr}^\prime_{i;M}.\)
+       </p>
+       <p>
+     Soient \(F\)  une formule sur une structure \(M\) puis 
+     \(
+     \left(k,f\right)
+     \in
+     \mathrm{dom}\;F^+_M.
+     \)  
+     On définit alors&nbsp;: 
+     \[
+     F^\iota_M
+     \left(
+     k,f
+     \right)
+     :=
+     \mathrm{pr}^\prime_1\circ F^+_M\left(k,f\right).
+     \]
+     Si \(\leq_Z\) est une 
+     relation de bonne-ordre 
+     de domaine contenant&nbsp;: 
+     \[I_M\left(F\right)
+     :=
+     D_M
+     \left(F\right)
+     \cup
+     \left\{0_A\right\}
+     \] et de domaine inclus dans 
+     \[
+     \left\{0_A\right\} 
+     \cup
+     \bigcup_{
+     U
+     \in 
+     \mathbb{F}\left(M\right)
+     }
+     D_M\left(U\right).
+     \]
+     tel que 
+     \(F^\iota_M\left(k,f\right)\)
+     
+    soi croissante et si 
+     lorsqu'il existe un 
+     \(
+     X\subseteq D_M\left(F\right)
+     \)
+     non vide tel que 
+     \(
+     X
+     \cap
+     Y_F\left(k,f\right)
+     =
+     \emptyset,
+     \) 
+     alors on exige que&nbsp;: 
+     \[
+     \mathrm{min}\;
+     F^\iota_M\left(k,f\right)
+     =
+     \mathrm{min}\;
+     F^\iota_M
+     \left(k,f\right)
+     \upharpoonright X.
+     \] ( bien sur si la partie \(X\) n'existe pas cette dernière condition n'est pas exigée. )<br> 
+     Alors on dira que
+      \(\leq_Z\) 
+      est
+     compatible avec 
+     \(F\) sur 
+     \(
+     \left(k,f\right).
+     \) <br> 
+     [
+     Si la partie \(X\) 
+     existe on peut 
+     parfois 
+     dire que la 
+     compatibilité 
+     est stressé.
+     ]
+     <span class='noteinf'>
+       j'ai juste fait cette 
+       dernière définition
+       dans le cas où on veut 
+       faire des 
+       représentations plus 
+       abstraite du 
+       concept de compatibilité 
+       et éventuellement 
+       utiliser 
+       la version stressé 
+       pour avoir une définition 
+       et les mot
+       qu'il faut.
+       le cas où 
+       la compatibilité 
+       est stressé 
+       nécessite que
+       \(M\vDash F\not\leftrightarrow \bot.\)
+       et d'un point de vue du 
+       shifting on peut dire que les cas où la compatibilité et 
+       stressé leur shifting et non neutre disons
+       que dans ce cas 
+       la les \(\sigma_n\) sont pour des 
+       \(n\neq 0.\)
+       <abbr>i.e</abbr> On a
+       \(
+       \left(\sigma_n\left(M,R\right)\right) \left(k,f\right)
+       \neq
+       \mathrm{Id}
+       \)
+       <br>
+       attention : 
+       <br>
+       [
+       <br>
+       on va justement voir que l'on a 
+      dans ce cas une est une seule classes de \(R^+_M\left(k,f\right)\) qui n'est pas réduit à un singleton. <br>
+      ]
+      <br>
+      
+      En faite on c'est d'abord intéressé au classes de \(R^+_M\) et ensuite au classe de 
+      \(R^+_M\left(k,f\right)\) 
+      qui donne lieu à des 
+      isomorphisme de tel sorte 
+      que l'on obtienne une 
+      décomposition&nbsp;: 
+      \[
+      \sigma^+_{M,R}:=\left(r,N\right)
+      \]
+      tel que&nbsp;: 
+      \[
+      R^+_M\left(k,f\right)=\nu_k\circ\lambda i.
+      \begin{cases}
+      0\text{ si } 
+      \left(r^\prime\left(k,f\right)\right)\left(i\right)\leq N\left(k,f\right)\\
+      \left(r^{\prime}\left(k,f\right)\right)\left(i\right)\text{ sinon.}
+      \end{cases}
+      \]
+      où \(r\left(k,f\right)\) est un 
+      isomorphisme de bonne-ordre 
+      de \(R_M\cup R^c_M\) vers 
+      l'ordinal 
+      \(\alpha_M\left(k,f\right)
+      \geq
+      \#\left(R_M\cup R^c_M\right)
+      \geq 
+      N\left(k,f\right).
+      \) et puis \(\nu_k\left(0\right ):=0_A;\nu_k\left(t\right)=\left(k,r^{\prime-1}\left(t\right)\right)\text{ si }i\neq 0,\) puis
+      où 
+     \[
+      r^\prime\left(k,f\right)
+      =
+      r\left(k,f\right)\cup r^{-1}\left(k,f\right).
+      \]
+      on peut effectivement faire des prolongement avec cette décomposition...<br>
+      si par exemple on a \(M\vDash \mathrm{Out}\rightarrow \mathrm{In}.\)
+      alors on a une relation fonctionnelle \(p\) vérifient&nbsp;: 
+      \[
+      \sigma^+_{M,\mathrm{Out}}=p\circ \sigma^+_{M,\mathrm{In}}
+      \]
+      on peut par exemple chercher \(p\) une fonction turing complète...
+      <br>
+      Dans le cas où la fonction et partielle on peut faire des restriction sur \(M,\) notamment sur son ensemble de base.
+      <br>
+      dans le cas où \[p=\varphi^{-1}\circ T_\text{Full}\circ \varphi,\]
+      on obtient ainsi un chiffrement par transformation naturelle donc mais on peut toujours à un isomorphisme près ( en effet c'est une relation de finesse entre \(\mathrm{In}\) et \(\mathrm{Out}\) qui est à prendre en compte... donc cela laisse plus de marge de manœuvre pour chiffrer... )
+      <br>
+      On peut par exemple choisir le 
+      \[\mathrm{In}:=\mathcal{PA}\left(F_0...F_q\right)
+      \]
+      et chercher un \(\mathrm{Out}\in O\in\mathcal{CPA}\) minimale, où l'ensemble de formule \(\mathcal{CPA}\) et un recouvrement de
+      \(\mathcal{TPA}\) 
+      où
+      \(\mathcal{PA}
+      \subseteq
+      \mathcal{TPA}
+      \) tel que&nbsp;: 
+      
+      \[
+      \begin{cases}
+      \mathcal{PA}
+      \subseteq 
+      \cup \mathcal{CPA}\\
+      \forall P
+      \subseteq 
+      \mathcal{CPA};
+      \cup P\in\mathcal{CPA};\\
+      \forall 
+      P_\text{finit}
+      \subseteq
+      \mathcal{CPA};
+          \cap      
+          P_\text{finit}
+          \in
+          \mathcal{CPA}.
+      \end{cases}
+      \]
+      ( on préfère du compact...)
+      <br>
+      on peut éventuellement supposer que \(\mathcal{CPA}\) et une topologie sur \(\mathcal{PA}\)
+      bien sur on relativise au modèle \(M\) c'est à dire que \(M\vDash H\rightarrow C\)  remplace 
+      \(\Gamma\vdash H\rightarrow C\)
+      où \[M\vDash \gamma\] pour chaque \(\gamma\in\Gamma\) 
+      <br>
+      On peut définir une topologie qui  
+     
+      lorsque \(\left(O_j\right)_{j\in I}\) est une famille d'ouvert telle que si&nbsp;: 
+      \[
+      
+      \left(\forall j\in I\exists u,v\in O_j;M\vDash u\rightarrow v\right)
+      \]
+      alors&nbsp;: 
+      \[\forall I_\text{finit }\subseteq I;\exists u,v\in \bigcap_{j\in I_\text{finit}} O_j;M\vDash u\rightarrow v.
+      \] 
+      (<br>
+      En faite cette
+      dernière condition 
+        permets de 
+        construire 
+        les différentes 
+        étapes de 
+        calcul
+        par exemple si&nbsp;:
+        
+     \[
+     \begin{cases}
+       u_0:=\mathrm{Out}
+       \\
+       u_{n}:=\mathrm{In}
+       \\
+       M\vDash u_{i}\rightarrow u_{i+1}
+       \\
+       u_i,u_{i+1}\in O_i;i:=0..q-1
+       \\
+       u_i\in\cap_j O_j;i:=0..q-1
+     \end{cases}
+     \]
+     alors on peut dire que les étape 
+     de calcul sont les 
+     \(u_i;i:=0..q.\)<br>
+     Si de plus il existe \(J_\text{finit}\subseteq I\) tel que'il existe 
+     \( v\in \bigcap_{j\in J_\text{finit}} O_j\) tel que il n'y a q'un unique 
+     \(u
+     \in \bigcap_{j\in J_\text{finit}}
+     O_j
+     \) 
+     tel que 
+     \[
+     M\vDash u\rightarrow v.
+     \]
+     alors on dit que que \(v\) est accepté par \(O\) de sortie \(u\)
+     et on notera cela&nbsp;:  
+     \[
+     O:v \leadsto u.
+     \]
+     puis le cardinal de la plus petite partie \(J_\text{finit}\) et appeler la \(\mu\)-complexité de \[O: v\leadsto u\] elle est noté&nbsp;: 
+     \[
+     \mathrm{cpx}_\mu\left(O:v \leadsto u\right).
+     \]
+      <br>)
+      <br>
+      Au delà de l'utilisation l' Arithmétiques de 
+      <name>Peano</name>
+      on peu éventuellement utiliser des schéma de théorie...
+      On vas développer ça dans notre brouillon...
+      <br>[<br>
+      
+      <br>]
+      <br>
+      <em class="hidden">
+      je ne sais pas encore si  \(
+      \exists P_\text{finit}      \subseteq
+      \mathcal{CPA}:
+      \forall u,v\in \cup\mathcal{CPA};
+      \left(
+      M\vDash u\rightarrow v\Leftrightarrow
+     u,v\in\cup P_\text{finit}
+
+      \right)
+      \)</em>
+      <br>
+      <!--
+      si de plus on a&nbsp;: 
+      \[
+      \exists I_\text{finit}\subseteq 
+      \left(
+      \forall u
+      \in 
+      \bigcap_{j\in I_\text{finit}}
+      O_j
+      :M\vDash u
+      \right)
+      \Rightarrow 
+      \forall v
+      \in
+      \bigcap_{j\in I_\text{finit}}
+      O_j;M\vDash u\rightarrow v;
+      \]-->
+      <br>
+      <span class='must'>
+      PAUSE de rédaction : étape 
+      de réflexion...</span>
+      </span>
+    </p>
+     <p>
+     on notera \(\mathcal{O}_{M,F}\left(k,f\right)\) l'ensemble des relation d'ordre compatible avec \(F\) sur \(\left(k,f\right).\)</p>
+     <p>
+       On vas montrer que si \(z\in\mathcal{O}_{M,F}\left(k,f\right)\) est stressé alors&nbsp;: 
+       \[
+       \mathrm{min}_{\leq_z}
+         I_M\left(F\right)
+        =
+        0_A.
+       \]
+     </p>
+     <h6>[ PREUVE ]</h6>
+     <div>
+       <p>
+       il suffit de constater que&nbsp;: 
+       \[
+       \mathrm{Im}\;F^\iota_M\left(k,f\right)\upharpoonright X=\left\{0_A\right\}.
+       \] lorsque \(Y_{F,M}\left(k,f\right)\cap X=\emptyset.\)
+       pour \(X\subseteq D_M\left(F\right).\)
+       
+       </p>
+       <span class='CQFD'>\(\square.\) </span>
+     </div>
+     <h6>Corollaire&nbsp;:</h6>
+     <div>
+       <p>
+         si \(z\in\mathcal{O}_M\left(k_j,f_j\right)\left(F_j\right);j=0..1\) et si 
+         \(
+         \mathrm{min}_{\leq_z}\;
+         I_M\left(F_0\right)\neq       \mathrm{min}_{\leq_z}\;
+         I_M\left(F_1\right).
+         \)
+         Alors si aucune n'est stressé
+         on a&nbsp;: 
+         \[
+         \#\mathrm{vl}\;F_0
+         \neq
+         \#\mathrm{vl}\;F_1.
+         \]
+         car elle ne représente pas les mêmes parties de deux ensemble \(M^p\neq M^q.\)</span>
+         <abbr>i.e&nbsp;: </abbr> \(p\neq q.\)</p>
+         <p>
+         on remarque donc que l'une d'entre elle possède plus de variable libre ce qui dans certain cas
+         par exemple si on fait \(F_0\wedge F_1\) et un peut particulier car leur variable libre commune et à prendre en compte on va justement en reparler!.</p>
+         <p>
+         cependant si on définit une relation de bonne-ordre sur les variables alors on peut toujours prendre des variables libre sur un segment initial contenant tous les variables libres dont on a besoin...
+       </p>
+     </div>
+     </div>
+     <h6>Définition des fonctions stable&nbsp;: </h6>
+     <div>
+       <p>
+       Soit \(\mathcal{G}_M\left(F\right)\) l'ensemble des applications  \(g\) de domaine le domaine \(F^+_M\) 
+       tel que 
+       
+        pour chaque élément \(x\) du domaine de \(F^+_M,\) alors&nbsp;: 
+        \[g\left(x\right)\]
+        est une relation de bonne-ordre compatible  avec \(F\) sur \(x\)
+        </p>
+        <p>Ainsi l'ensemble
+        \(
+        \mathcal{G}_M\left(F\right)
+        \) est définie de la façon suivante&nbsp;:
+        \[
+        \mathcal{G}_M\left(F\right)
+        :=\left\{
+        g\in G_{M,F}
+        \vert
+        \forall x\in D^+_M;
+        g\left(x\right)\in \mathcal{O}_{M,F}\left(x\right)
+        \right\}
+        \]
+        où 
+        \(G_{M,F}\) est l'ensemble des applications de \(D^+_M\) vers 
+        \[
+        \bigcup_{x\in \mathcal{D}_{01} \left(M\right)}\mathcal{O}_{M,F}
+        \left(x\right).
+       \]</p>
+     </div>
+    <div>
+    <p>
+    ici on suppose que 
+    \(M
+    :=
+    \mathbb{B}
+    =
+    \left\{\bot,\top\right\}
+    \)
+    donc si un prédicat
+    est ici 
+    considéré 
+    comme une fonction
+    de \(M^n;n\in\mathbb{N}\) 
+    vers
+    \(M\) donc 
+    pour un prédicat 
+    \(C\) alors
+    \(C_M\)
+    est 
+    considéré
+    comme
+    \(C^{-1}\left(\left\{\top\right\}\right).\)
+    </p> 
+    <p>ici un 
+    tuple de terme peut 
+    êtres considéré 
+    comme une application de 
+    \(M^n\) vers \(M^m\) 
+    on vas voire 
+    sa de suite.
+     donc une 
+     des particularité
+     logique de c'est
+     cas la est que l'on 
+     peut transformer
+     un terme \(t\)
+     et une formule
+     atomique  
+     \(R\) par une
+     formule \(t\tilde R\)
+     de tel sorte que&nbsp;: 
+     \[
+     p\left(t,R\right)
+     \wedge 
+     q\left(t,R\right)
+     \leftrightarrow
+     Rt
+     \] en choisissant bêtement \(p\) et \(q\)
+     de la façon suivante&nbsp;: 
+     \[
+     \begin{cases}
+     p\left(t,R\right)
+     :=Rt
+     \\
+     q\left(t,R\right)
+     :=Rt
+     \end{cases}
+     \] <em>mais</em> en réalité il y a d'autres cas plus intéressant on en reparlera un peu plus loin même si on peut déjà 
+     constater que 
+     \[
+     \left(Rt\right)_M
+     =
+     \mathrm{Im}\;t_M\cap R_M. 
+     \] donc si on switch l'image de 
+     \(t_M\) ( éventuellement en utilisant le clocking de \(t\) 
+      ) en un domaine alors cela peut mettre 
+      en 
+      exergue des informations 
+      importantes sur
+      les différentes
+      interaction 
+      entre
+      les variables \(t,R\) dans la détermination des valeurs de \(p\left(t,R\right)\) et de 
+      \(q\left(t,R\right)\) justement lorsqu'il y'a le moins d'interaction alors on note \(t/R:=p\left(t,R\right)\wedge q\left(t,R\right)\)
+      ou cela constitue un schéma de conecteur dépendant du contexte de \(p\) et \(q\) ( de façon plus meta on peut dire que c'est un principe de schéma. )
+    </p>
+    <p>
+      <span class='must'>PAUSE...</span>
+    </p>
+    </div>
+ <h4>étude des classes <mark>[ A REFAIRE!. ]</mark></h4>
+ <div>
+<p>
+Soit \(F\) une formule 
+et \(M\) structure 
+de signature compatible avec \(F\) <abbr>i.e .</abbr> 
+dont la signature comprend 
+tout les symboles utilisés 
+dans \(F\). 
+On vas étudier
+les classes&nbsp;:
+\[
+E_{k,f}
+:=
+\left[k,f\right]_{F^+_M}.
+\]
+</p>
+<div>
+ On a déjà la propriété 
+ suivante&nbsp;:
+<div>
+<p>
+Pour chaque \(\left(k,f\right)\)
+du domaine de \(F^+_M\) 
+il existes un unique ensemble&nbsp;: 
+\[
+\theta_{f,F}\left(k\right)
+\] 
+tel que&nbsp;: 
+\[
+ E_{k,f}=\left\{k\right\}
+ \times 
+ \theta_{f,F}\left(k\right).
+ \]
+ </p>
+ <p>
+ On peut toujours 
+ définir une relation 
+ fonctionnelle&nbsp;: 
+ \[
+ \Theta^\prime_{F}:
+  k
+  \rightarrow
+ \mathcal{P}\left(
+ \mathrm{Im}\;
+ \lambda f.
+ \theta_{f,F}\left(k\right)
+ \right)
+ \]
+  On peut la définir 
+  de la 
+  façon suivante&nbsp;: 
+  \[
+   y
+   \in 
+     \Theta^\prime_{F}
+     \left(k\right)
+   \Leftrightarrow
+   \left(
+     \exists g:
+     \left(k,g\right)
+      \in 
+      E_{k,g}
+     \cap 
+      \left\{k\right\}
+        \times 
+      \cup y
+    \right).
+    \]
+</p>
+<p>
+  Déjà on peut constater que&nbsp;: 
+  \[
+  \forall y
+         \in
+         \Theta^\prime_{F}
+         \left(k\right)
+         ;
+  \forall y^\prime
+          \in
+          y
+         ;
+  \exists f
+         :
+         y^\prime
+         =
+         \theta_{f,F}
+         \left(k\right).
+  \]
+  <abbr>i.e.</abbr>
+  les éléments
+  \(y\in\Theta_{F}\left(k\right)\)
+  sont des ensemble de la 
+    formes&nbsp;: 
+  \[
+    y
+    =
+    \left\{
+    \theta_{g,F}
+      \left(k\right);
+       g
+       \in
+       T_{F}\left(k\right)
+    \right\}.
+    \]
+    donc une union de la forme&nbsp;: 
+    \[\cup y\] est une union disjointe de la forme&nbsp;: 
+    \[
+    \bigcup_{g\in T_{F}\left(k\right)}
+      \theta_{g,F}\left(k\right)
+    \]
+    <!--donc on a forcément&nbsp;:-->
+    <br>
+    <span class='must'>
+      il y a un problème à corriger 
+      car j'ai choisis d'étudier l'ensemble des \(y\) tel
+      que&nbsp;: 
+      
+      \[\exists g : 
+        \left(k,g\right)
+        \in 
+        E_{k,g}
+        \cap
+        \left\{k\right\}
+        \times 
+        \cup y
+       \] de ce faite la variable \(g\)
+       quantité en ''\(\exists\)''
+       peut poser problème s'il
+       ''en exists trop.'' 
+       <br>
+       <em><b>mais</b> on peut constater que pour deux classes \(E_{k,g_0}\) et \(E_{k,g_1}\) distincts on a forcément 
+       \[
+       \theta_{g_0,F}\left(k\right)
+       \cap
+       \theta_{g_1,F}\left(k\right)
+       \]
+       <b>ce qui évite le problème</b>
+       je vais justifier cela plus formellement&nbsp;: <br>
+      <mark>je clos la question</mark> en choisissant 
+       \(y
+       :=
+       \left\{
+       \theta_{g_0,F}\left(k\right)
+        ,
+       \theta_{g_1,F}\left(k\right)
+       \right\}
+       \)
+       on obtient alors&nbsp;: 
+       \[
+       \left(k,g_i\right)
+       \in
+       E_{k,g_i}
+       \cap 
+       \left\{k\right\}
+        \times
+       \theta_{g_i,F}\left(k\right)
+       ;i:=0..1
+       \]
+       <mark>il y'en a donc trop,</mark> car&nbsp;: 
+       \[
+       \left(k,g_i\right)
+       \in
+       E_{k,g_i}
+       \cap 
+       \left\{k\right\}
+       \times
+       \left[
+       \theta_{g_0,F}\left(k\right)
+       \cup
+       \theta_{g_1,F}\left(k\right)
+       \right]
+       \]
+       mais je soulève une autre 
+       question plutôt d'ordre topologique, car en effet on 
+       peut regarder du côté des parties minimale de 
+       \(\Theta^\prime_{F}\left(k\right)\)
+       qui sont les singleton de la 
+       forme&nbsp;: 
+       \[
+       \left\{
+       \theta_{f,F}\left(k\right)
+       \right\}.
+       \] question qui d'ailleurs en soulève d'autres...
+       </em>
+    </span>
+</p>
+<p>
+On vas étudier 
+ les inclusion de 
+  la forme&nbsp;: 
+ \[
+   \theta_{f,F}
+   \left(k\right)
+   \subseteq 
+   \theta_{g,F}
+   \left(k\right)
+  \]
+  </p>
+  <p>
+  On peut montrer que&nbsp;:
+            \[
+  u\in 
+   \theta_{f,F}\left(k\right)
+  \Rightarrow 
+   \theta_{u,F}\left(k\right)
+  =
+  \theta_{f,F}\left(k\right).
+  \]
+  car 
+  \(
+    \left(k,u\right)\in E_{k,f}
+  \Leftrightarrow 
+      \left\{k\right\}
+     \times
+      \theta_{u,F}\left(k\right)
+    =
+      \left\{k\right\}
+     \times
+      \theta_{f,F}\left(k\right).
+  \)
+  Donc&nbsp;: 
+    <span class='blkmath'>
+  \[
+\theta_{f,F}\left(k\right)
+\subseteq 
+\theta_{g,F}\left(k\right)
+\Rightarrow 
+\theta_{f,F}\left(k\right)
+=
+\theta_{g,F}\left(k\right).
+\]</span>
+</p>
+<p>
+  Soit maintenant&nbsp;:
+  \[
+  y_s
+  \subseteq
+  \mathrm{Im}\;
+     \lambda f.
+         \theta_{f,F}\left(k\right)
+  ;s=0..1
+  \]
+  tel que&nbsp;: 
+  \[
+   \left(k,z\right)
+  \in 
+    E_{k,z}
+     \cap 
+    \left\{k\right\}
+     \times 
+    \cup y_s;s=0..1.
+  \]
+  on peut donc constater que&nbsp;: 
+  \[
+    \theta_{z,F}\left(k\right)
+     \subseteq
+    \left(\cup y_0\right)
+       \cap
+    \left(\cup y_1\right),
+  \]
+  car 
+  \(\theta_{z,F}\left(k\right)
+    \subseteq
+   \cup y_s;s=0..1.\)
+  <!--On a aussi&nbsp;: 
+  \[
+     \theta_{z,F}\left(k\right)
+    \cap 
+     \theta_{z^\prime,F}\left(k\right)
+    =
+    \begin{cases}
+    \theta_{z,F}\left(k\right) 
+    \text{ si }
+      \theta_{z,F}\left(k\right)
+      =
+      \theta_{z^\prime,F}\left(k\right)
+      \\
+      \emptyset \text{ sinon. }
+    \end{cases}
+  \]
+  donc si 
+  \[
+   \theta_{z^\prime,F}
+    \subseteq
+   \cup y_p
+  \]
+  pour seulement un \(p\in\left\{0,1\right\}\)
+  alors..--><br> 
+  <span class='must'>
+    <mark>PAUSE</mark> café clope mathématique,sans rédaction instantané...<br>
+    puis détailler et corriger...<br>
+    puis checking..
+ <!--Paix à vous papa Claire Florian-->
+  </span>
+  On obtient la une propriété de paire d'unions&nbsp;: 
+  \[
+  \left(\cup \tilde y_0\right)
+  \cap
+  \left(\cup \tilde y_1\right)=\theta_{z,F}\left(k\right).
+  \] pour deux \(\tilde y_0\) et \(\tilde y_1\) bien choisi on va expliquer comment les 
+  obtenir,
+  en effet cela réside dans le fait que&nbsp;: 
+  \[
+  \theta_{z,F}\left(k\right)
+   \subseteq
+  \cup y_s;s=0..1
+  \] pour chaque \(y_s\in \mathrm{Im}\;\Theta^\prime\left(k\right);s=0..1\)
+  donc d'après ce qui pressede 
+  \(\theta_{z,F}\in y_s\)
+   
+  donc si&nbsp;: 
+  <!-- 
+   On vas avoir besoin de choisir
+   \(y_s;s=0..1.\)
+  -->
+ \[
+  Z:=\theta_{z^\prime,F}\left(k\right)
+   \in
+  y_s;s=0..1
+ \] alors on peut choisir un \(s\in \left\{0,1\right\}\)  et un \(\gamma_s:=y_s\backslash \left\{Z\right\}\) 
+ qui ne contient pas 
+ \(
+ \theta_{z^\prime,F}\left(k\right)
+ \) aller disons que <em>pour être plus précis</em> on le note&nbsp;: 
+ \[\gamma_{s,z^\prime}:=\gamma_s\]
+ pour un \(s:=S_k\left(z^\prime\right)\) tous en posent&nbsp;: 
+ \[
+ \gamma_{\bar s,z^\prime}=y_{\bar s}.
+ \]
+ <span class='noteinf'>On obtient ainsi une ''suite de 0..1'' enfin plus exactement une famille d'éléments de \(\left\{0,1\right\}.\)
+ </span>
+ on peut ensuite définir le couple&nbsp;: 
+ \[
+ c_\gamma\left(z^\prime,k,F\right)
+ :=
+ \left(
+      \gamma_{s,z^\prime}
+       ,
+      \gamma_{\bar s,z^\prime}
+ \right).
+ \]
+ puis poser&nbsp;:  
+ \[
+ Y_{p,F}\left(k\right)
+ :=
+ \bigcup_{\left\{k\right\}
+          \times 
+          z^\prime
+          \notin 
+          E_{k,z}
+        }
+ c_{\gamma,p}\left(z^\prime,k,F\right);p=0..1.
+ \]
+ On va terminer la preuve on démontrent que&nbsp;: 
+ \[
+ \bigcap_{\eta=0..1}
+ \left(\cup Y_{\eta,F}\right)
+ =
+ \theta_{z,F}\left(k\right)
+ \] 
+ tout en constant que&nbsp;: 
+ \[
+ Y_{p,F}
+ \subseteq 
+ \left\{
+ v\vert 
+ \exists f : v  
+ =\theta_{f,F}\left(k\right)
+ \right\}.
+ \]
+ <!-- le \(\bar s\) 
+      n'est rien d'autre que 1-s 
+      c'est un complément binaire.
+  -->
+  <!--pour chaque 
+  \(
+  z^\prime
+  \) tel que&nbsp;: 
+    
+\(
+E_{z^\prime,f}
+\text{ est définie et tel que : }
+E_{k,z^\prime}
+\neq 
+E_{k,z}.
+   \)-->
+  <div class='must'>
+    je vais méticuleusement vérifier 
+    ce qui précède, c'est le [ TODO: 1<sup>er</sup>de la nuit du 2024/5/01]
+    ....<br>
+    ....<br><!--
+    todo:  ( avec une façon qui pourrait êtres intéressente d'un point de vue <em>topologique!</em>. )-->
+    <br>
+    <!--+33 en force,+33 en paix..-->
+  </div>
+  
+  <!--Ainsi 
+\(
+\cap\Theta^\prime_{F}\left(k\right)
+\)
+
+est bien un singleton 
+car \(E_{k,z}\neq E_{k,u}\Rightarrow E_{k,g}\cap\left\{k\right\}\
+\times 
+\theta_{z,F}\left(k\right)=\emptyset.\)
+donc si 
+\[\left(k,z\right)\in E_{k,z}\cap \left\{k\right\}\times y_j;j=0..1
+\]
+alors \(\theta_{z,F}\left(k\right)
+\subseteq y_j;j=0..1\)
+on a donc 
+\[
+\theta_{k,z}
+\in 
+\cap\Theta^\prime_F\left(k\right)
+\] donc si \(E_{k,z}\neq E_{k,z^\prime}
+\) et si \(\theta_{z^\prime,F}.\)-->
+
+
+</p>
+<p class='hidden'>
+Donc on peut définir une relation fonctionnelle&nbsp;:
+<span class='blkmath'>
+  \[
+   \Theta_{F} :
+      k
+     \mapsto
+     \theta_{f,F}\left(k\right)
+  \]</span>
+  
+  <em>juste</em> en posent 
+  \(\Theta_{F}:=
+  \lambda k.
+  \cup\cap\Theta^\prime_{F}
+  \left(k\right)\) <em>indépendamment</em> de \(f.\) 
+  </p>
+<p>
+  Pour des applications \(f,g\) tel que \(f^+,g^+\in M^+,\) on peut envisager l'ensemble&nbsp;:
+            \[
+            \upsilon\left(f,g\right)
+            :=
+            \mathrm{Im}\left(f^+\right)
+            \cap 
+            \mathrm{Im}\left(g^+\right).
+            \] 
+</p>
+<!-- On constatera que&nbsp;: 
+ \[
+   \upsilon\left(f,g\right)\bad
+ \subseteq
+     \theta_{f,F}\left(k\right)
+   \cap
+     \theta_{g,F}\left(k\right).
+ \] donc si 
+ \(
+    \theta_{f,F}\left(k\right)
+   \subseteq
+    \theta_{g,F}\left(k\right)
+  \) alors 
+  \(  \upsilon\left(f,g\right)
+    \subseteq 
+      \theta_{f,F}\left(k\right)
+  \) on a déjà 
+  la 
+  une condition nécessaire l'inclusion en question, 
+  puisque on vient d'obtenir&nbsp;:  <span style='border:solid 0.52px lightslategrey ;padding :2px;display:block;'>
+  \[
+  \theta_{f,F}\left(k\right)
+  \subseteq
+  \theta_{g,F}\left(k\right)
+  \Rightarrow 
+  \upsilon\left(f,g\right)
+  \subseteq
+  \theta_{f,F}\left(k\right)
+  .
+  
+  \] </span>
+  On peut évidemment constater que&nbsp;:
+
+  donc pour tous 
+     \(u\) tel que 
+     \(\upsilon\left(f,u\right)
+     =
+     ...\pause
+     \)
+     on a 
+     \(\theta_{f,F}\left(k\right)
+     =theta_{u,F}\left(k\right),\) lorsque&nbsp;: 
+\[
+\theta_{f,F}\left(k\right)
+\subseteq 
+\theta_{g,F}\left(k\right).
+\]
+Donc 
+  <span style='border:solid 0.52px lightslategrey ;padding :2px;display:block;'>
+\[
+\theta_{f,F}\left(k\right)
+\subseteq 
+\theta_{g,F}\left(k\right)
+\Rightarrow 
+\theta_{f,F}\left(k\right)
+=
+\theta_{g,F}\left(k\right).
+\]
+Car si \(\theta_{f,F}\left(k\right)
+\subseteq 
+\theta_{g,F}\left(k\right)\) 
+alors&nbsp;: 
+\(
+  \upsilon\left(f,g\right)
+ \subseteq 
+  \theta_{g,F}\left(k\right)
+\) donc d'après ce qui précède on obtient&nbsp;: 
+\[
+\forall u\in \upsilon\left(f,g\right);
+ \theta_{g,F}\left(k\right)
+ =\theta_{u,F}\left(k\right)
+  </span>-->
+  </div>
+                     
+                     </div>
+                      </div>
+                      <p>
+              il et à noter que l'on a aussi&nbsp;: 
+                  \[M\vDash R\rightarrow Q\Leftrightarrow \left(R^-_M\rightarrow_*
+                      Q^-_M\;\text{ injective}\right) .\] on pour tous prédicat on 
+                      définit &nbsp;: \[P^-_M:=\left(P^+_M\right)^\prime \] On utilise le parentésage pour exprimer que c'est comme un complément comme dans la définition [le prime de dual] 
+                      On a aussi \(R^-_M\text{ injective }\) si est seulement si \(M\vDash \neg R.\) 
+                      On a aussi 
+                      \(R^-_M\) constant si et seulement \(M\vDash R\) 
+                     Ainsi lorsque que l'on utilise seulement l'implication on peut choisir dans quel sens on vérifie l'inclusion( on en reparlera!. )
+                    </p>
+                      <h3>
+                        Les propriétés
+                      de
+                      plonger 
+                      dans
+                      le
+                      cosimplex
+                      de la fonction 
+                      \(R
+                      \mapsto
+                      R^+_M\)
+                      </h3>
+                      <p>
+                        On
+                        vas
+                        montrer 
+                        que 
+                       
+                   l'application&nbsp;:
+                        
+           \[\sigma_M:
+           R\mapsto R^+_M\]
+                        vérifie 
+                        les
+                        propriétés
+                        
+                     suivantes&nbsp;: 
+                        <ol>
+                          <li>
+                     \[ \mathrm{Cl} \left( \sigma_M\left(P\vee Q\right)\right)=\mathrm{Cl}\left(\sigma_M\left(P\right)\right) \vee_S \mathrm{Cl}\left(\sigma_M\left(Q\right)\right) \]
+                     où \(p\vee_S q\) est la partition la plus fine tel que pour les deux partitions \(p, q\) on ait \(p, q\sqsubseteq p\vee_S q\) <span class'noteinf'>c'est une clôture transitive 
+                     
+                    </span>
+                          </li><li>
+                           \[ \mathrm{Cl} \left( \sigma_M\left(P\wedge Q\right)\right)=\mathrm{Cl}
+                          
+                    \left(\sigma_M\left(P\right)\right) \wedge_S \mathrm{Cl}\left(\sigma_M\left(Q\right)\right) , \]
+                     où \(p\wedge_S q\) est la partition la moins fine tel que pour les deux partitions \(p, q\) on ait \(p\wedge _S q\sqsubseteq p, q\) </li>
+                        </ol>
+                        </p>
+                     <h4>[PREUVE]</h4>
+                     <div>
+                       Pour montrer la propriété (1) on se donne une relation fonctionnelle \(u\) tel qu'ils exists deux relations fonctionnelles \(a\) et \( b\) vérifiant \[
+                       \begin{cases} 
+                        u=a\circ P^+_M\\
+                       u=b\circ Q^+_M
+                       \end{cases} 
+                    \] 
+                    On vas construire ensuite une relation fonctionnelle \(\rho \) tel que&nbsp;:
+                    \[ \rho \circ \left(P\vee Q\right)^+_M= u=a\circ P^+_M=b\circ Q^+_M.\]
+                    déjà on peut prendre comme domaine de \(\rho\) l'ensemble des applications de domaine \(\left(P\vee Q\right)_M\cup \left(
+                    P\vee Q
+                    \right)^c_M \) et d'image l'ensemble&nbsp;: \[
+                    \left\{0_A\right\}\cup \left\{\left\{k, i\right)
+                    \vert \exists f^+\in M^+:\left(\left(k,i\right) \in \mathrm{Im}\; f^+\wedge \left(M\vDash P\left[\underline i\right]\vee M\vDash Q\left[\underline i\right]\right)\right)
+                    \right\}.
+                    \] On a ainsi \[ \rho\left(\iota 
+                    \right)=a\left(c\right) =b\left(d\right) \] pour des applications \(\iota, c,d\)
+                    <h4>le schéma de la preuve&nbsp;:</h4>
+                <ol>
+                   <li>
+                    On vas  déterminer la valeur de \(\iota\) à partir des deux autres applications <abbr>i.e.
+                    </abbr>
+                    \[h:c,d\mapsto \iota\] donc obtient \(\rho\left(h\left(c, d\right)\right)=a\left(c\right)=b\left(d\right)\)
+                    </li>
+                    <li>
+                     
+                    On  prouve ensuite que&nbsp;: 
+                    \[\forall w\in 
+                    m 
+                    \begin{cases}
+                    h\left(c, d\right)=\left(P\vee Q\right)^+_M\left(w\right)
+                    \\
+                    c=P^+_M\left(w\right)
+                    \\
+                    d=Q^+_M\left(w\right) 
+                    \end{cases} 
+                    \] où \(m:=\left(P\vee Q\right)_M,
+                    \left(P\vee
+                    Q\right)^c_M.\) 
+                    </li>
+                    <li>
+                     Ainsi&nbsp;: \[\rho\left(\iota\right)=a\left(c\right)=u\left(w\right)=b\left(d\right).\] Puis on conclut.
+                    </li>
+                    </ol>
+                    <h5>étape <num>1</num>&nbsp;: </h5>
+                    <p>
+                      à vrai dire la méthode est toute bête&nbsp;: on définit d'ailleurs une loi de composition interne \(u*_\vee v=0_A\) si est seulement seulement si \(u=0_A;v=0_A\) dans les autres que on choisi \(u*_\vee v=u\) lorsque \(u\neq 0_A\) si non \(u*_\vee v=v\) on a ainsi \[h\left(c, d\right) =\lambda x.c\left(x\right)*_\vee d\left(x\right). \] 
+                     
+                     On peut justifier cela...<span class='must'>TODO</span>
+                    </p>
+                    <h5>étape 2.</h5>
+                    <p>
+                      il nous suffit de prendre \[\left(c, d, h\left(c, d\right)\right)=:\left(P^+_M, Q^+_M, \left(P\vee Q\right)^+_M\right)\] et le tour est joué puisque que dans ce cas là toute les hypothèses sont respecté
+                    </p>
+                    
+                    <span class='CQFD'>
+                      \(\square_1\) 
+                     <p class='noteinf'> On a donc prouvé la propriété de la transformation des disjonction en sup dans le cosimplex c'est déjà un début pour obtenir notre sous algèbre de bool à certains cosimplex ( non fini..) on va plonger justement l'agébre universelle dans des cosimplex..</p>
+                      </span>
+                     <!-- obtient
+                    \[\begin{cases} 
+                    0_A\neq z_0:=\left(k,i\right)\Leftrightarrow  i\in Q_M\\ 
+                   0_A\neq z_1:=\left(k,i\right)\Leftrightarrow i\in P_M.\end{cases} \]-->
+                     
+                    <!-- alors on peut voir que dans se cas que si on se donne de éléments  \(y_0\) et \(y_1\) de \(\mathrm{Im}\;\left(P\vee Q\right)^+_M\) tel que&nbsp;: 
+                    \[y_0=\rho\left(t_0\right)\text{ et } y_1=\rho \left(t_1\right)\] avec \(t_0\neq t_1\) on vas montrer que \(y_0\neq y_1\)
+                    alors par symétrie deux cas ce présente
+                    <ol>
+                      <li>\(y_\epsilon =0_A\) et \(y_{\bar{\epsilon}} =\left(k, i\right) \) où \[i\in
+                      \left(P\vee Q\right)_M.\] </li>
+                      
+                  <li>
+                    \(y_l =\left(k_l,i_l\right) \) où \[i_l\in
+                      \left(P\vee Q\right)_M.\] avec \(l:=0..1.\) </li>
+                    </ol>
+                    bien entendu dans pour les valeur de \(y_n;n=:0..1\) distincts de \(0_A\) on suppose \(y_n\in \mathrm{Im}\; f^+\) 
+                    donc dans le cas où \(i_0=i_1\)  et  \(k_0=k_1\) dans ce cas cela implique que et  
+                    \[M\vDash P\left[\underline i_0\right]\text{ ou }M\vDash Q\left[\underline i_0\right].\] si \(k_0-->
+                    <p>On peut donc décomposer l'image de \(\mathrm{Cl}\circ \sigma_M\) de la façon suivante&nbsp;: 
+                    \[\bigvee_{i\in\alpha} P_{\left\{y_{i}, y_{i+1}\right\}}\] 
+                    avec \(\left(y_i\right)_\alpha\) où \(\alpha\) est un ordinal, dans de nombreuses situations on peut être dans le cas où on a \(\alpha:=\omega\) d'après le <abbr>LSD.</abbr> pour certains modèles d'une théorie on peut aussi faire des constatation sur les théorie \(\aleph_0\)-catégorique de les cas où on se place uniquement dans des modèles dénombrable dans d'autres situations on peut aussi avoir affaire à des \(\alpha\) aussi grand que l'on veut si on applique le <abbr>LSA.</abbr>
+                    bien entendu lorsque l'on se soucie des modèles respectent tel ou tel théorie. 
+                    dans le cas des théories complètes on peut par exemple ne choisir que l'un des modèles et obtenir des conclusion à partir des cosimplex </p><p>je pense que que cette méthode permettra de faire des syntaxe homogène où terme et relation formule ne sont pas toujours différente et seront plus librement manipulable car on peut faire des variations du \(0_A\) dans ce cas là on obtient des objets qui vont perdre leur propriété booléene et donc offrir plus de richesse on peut par exemple trouver des éléments que je nomme sus-booléen <abbr>i.e.</abbr>
+                    le moins (ou plus) fin 
+                    
+                    des non booléen plus (ou moins) fin q'une familles de booléen ....cela peut peut-être se faire à l'aide de ma méthode des syntaxe homogène.</p>
+                     </div>
+                 <h3>pour la conjonction </h3> 
+                 On fait à-peu-près la même chose mais dans l'autre sens on définit une loi de composition interne \[u*_\wedge v:=\begin{cases} 
+                    u\text{ si } u\neq 0_A\text{ et si } v\neq 0_A\\
+                    0_A \text{ sinon. }
+                    \end{cases}
+                    \] 
+                    puis on se donne une relation fonctionnelle \(u\) tel qu'il existe deux relations fonctionnelles \(a\) et \(b\) vérifiant&nbsp;: 
+                    \[
+                    \begin{cases}
+                    a\circ u=P^+_M
+                    \\
+                    b\circ u=Q^+_M.
+                    \end{cases} 
+                    \] 
+                    Ensuite on construit une relation fonctionnelle \(\nu\) vérifiant&nbsp;: 
+                    \[
+                    \nu \circ u= \left(P\wedge Q\right).
+                    \] 
+                    de la façon suivante&nbsp;:
+                    \[
+                    \nu\circ u=\lambda x.P^+_M\left(x\right) *_\wedge Q^+_M\left(x\right).
+                    \] on obtient 
+                    ainsi
+                    une
+                    relation
+                    fonctionnelle
+                    \(\nu\)
+                    de 
+                    domaine 
+                    l'image de \(u\) je
+                    vous laisse le 
+                    soin de détailler le reste
+                 <span class='must'>
+                      ...TODO!
+                    </span>
+                    <h3>
+                      ''une 
+                    petite définition
+                    sans plus pour 
+                    le moment''
+                    </h3>
+                    <p>
+                      On peut 
+                      définir
+                      la notion
+                      de connecteurs homomorphique 
+                      de la façon
+                      suivante&nbsp;: 
+                      \(\eta\)
+                      est appelé 
+                      une 
+                      forme
+                      homomorphique 
+                      de 
+                      \(\mathbb{B}\)
+                      vers 
+                      \(\mathbb{S}\) 
+                <span class='noteinf'>
+                  ( ici : 
+                  on a noté
+                      \(\mathbb{S}\) 
+                      la classe des
+                      cosimplex)
+                      </span>
+                      lorsque
+                      que \(\eta\) 
+                      est une 
+                      fonction
+                      d'une
+                      algèbre 
+                      de 
+                      bool 
+                      vers une
+                      autre, 
+                      disons
+                      \(B_\eta\)
+                      tel 
+                      qu'il 
+                      exists
+                      une 
+                      relation fonctionnelle
+                      \(\varphi\)
+                      tel
+                      qu'il existe 
+                      une
+                      relation fonctionnelle
+                      \(\eta^\prime\) 
+                      telle
+                      que
+                      la 
+                      propriété
+                      suivante 
+                      soit 
+                      respectée 
+                      \[
+                      \varphi
+                      \left(
+                      \eta
+                      \left(x\right)
+                     \right) =
+                     \eta^\prime
+                     \left(
+                     
+                     \varphi
+                     \left(x\right)
+                     \right) 
+                      \] 
+                     On 
+                     en 
+                     reparlera mais 
+                     on 
+                     dit 
+                     qu'elle 
+                     est standard 
+                     si de plus 
+                     elle 
+                     préserve la 
+                     propriété
+                     de plongée 
+                     booléene 
+                     (
+                     <abbr>i.e</abbr>
+                     \[
+                     \varphi
+                     \left(x*y \right)
+                     =
+                     \varphi
+                     \left(x\right)*
+                     \varphi
+                     \left(y\right)
+                     \] où \(*\) 
+                     est l'un
+                     des
+                     de connecteurs
+                     \(\vee\) 
+                     ou 
+                     \(\wedge\)
+                     
+              <span class='noteinf' >
+                       On peut éventuellement parler 
+                     de
+                     multi-forme 
+                     homomorphique de 
+                     la
+                     même
+                     façon 
+                     en replacent 
+                     \(*\)
+                     par des connecteurs
+                     \(n\)-aire 
+                     et 
+                     aussi avec \(n\)
+                     non fini..
+                    </span>
+                    </p>
+                    <h3>
+                      Les quantification universelle dans le cosimplex [ première sémantique ] </h3>
+                    <p>
+                      On 
+                      a 
+                      vu
+                      que la conjonction
+                      était transformée 
+                      en 
+                      <abbr >inf.</abbr> 
+                      dans le 
+                      cosimplex 
+                      si on s'est 
+                      donné 
+                      une famille
+                      de
+                      prédicat
+                      \(\left(
+                      P_i
+                      \right)_{j\in J}
+                      \) 
+                      alors on
+                      définit&nbsp;: 
+                      
+                  \[
+                  L
+                      \left(P\right)
+                      :=
+                      \mathrm{Cl}
+                      \left[
+                      {
+                      \Lambda j\in J;
+                      P_j
+                      }
+                      \right]
+                      :=
+                      \bigwedge_{
+                      j\in J
+                      }
+                      \mathrm{Cl}
+                   \left[
+                   \left(P_j\right)^+_M \right] 
+                      \] 
+                     
+                      <abbr>i.e.</abbr> c'est 
+                      une 
+                      borne
+                      <abbr>inf.</abbr> 
+                      on peut
+                      éventuellement
+                      voir 
+                      cela 
+                      de la 
+                      façon suivante&nbsp;: 
+                   \[
+                   \Lambda j\in J;
+                   \left(
+                     P_j
+                   \right)^+_M
+               =\left[
+               \mathcal{L}_K
+               \left(P\right)
+               \right]^+_M
+               \]
+               où 
+               \(\mathcal{L}_K
+               \left(u\right)\) 
+               pour une 
+               famille
+               \(u:=
+               \left(
+               u_j
+               \right)_{j\in J}
+               \) 
+               est définit 
+               de 
+               la façon
+               suivante&nbsp;: 
+               \[
+               \mathcal{L}_K
+               \left(u\right)
+               :=
+               \lambda x\lambda i.
+               \begin{cases}
+                  0_A 
+                  \text{ si }
+                  \exists 
+                  j\in K:
+                      \left(u_j
+                      \left(x
+                      \right)\right)\left(i\right)=0_A \\
+                  \left(u_j\left(x\right)\right)\left(i\right)
+                  \text{ si }
+                  \forall t \in K;
+                    \left(u_j\left(x\right)
+                    \right)\left(i\right)=\left(u_t\left(x\right)\right)\left(i\right)\neq 0_A.
+                  \end{cases} 
+               \] 
+               On
+               peut
+               constater
+               que l'on a 
+               défini une
+               relation
+               \(\mathcal{L}_K\left(P\right)\) fonctionnelle 
+               qui respecte
+               la propriété suivante&nbsp;:
+               \[
+               \mathrm{Cl}\left[\mathcal{L}_K
+               \left(\underline P^+_M
+               \right)\right] =
+                 \bigwedge_{
+                 j\in K} \mathrm{Cl}\left[\left(P_j\right)^+_M \right]. 
+               \] où on a noté \(\underline P^+_M:=\left[\left(P_j\right)^+_M\right]_{j\in J}\) </p>
+               <h3>Les 'espèces' de projecteurs  \(\pi,\mathrm{pr}\) et \(p..\) puis les schémas de projecteur définissable...
+               </h3>
+               <div>
+               <p>
+                 
+                 
+                 pour chaque interprétation \(M.\) 
+                 On peut définir les projecteur \(\pi_n;n\in\mathbb{N}\) de la façon suivante&nbsp;: 
+                 si on se donne une famille d'éléments de \(M\) 
+                 \(X:=\left(x_i\right)_{i\lt l}\) où \(l\in
+                 \mathbb{N}\) 
+                 alors 
+                 on 
+                 définit&nbsp;: 
+                 \[\pi_n\left(X\right)=x_n\] lorsque \(n\lt p\)
+                 avec&nbsp;:
+                 \[\mathrm{dom}\;\pi_n:=\bigcup_{j\geq l} M^j\] si 
+                 \(k\geq  l\) on
+                 suppose&nbsp;: \[\mathrm{dom}\; \pi_k:=\emptyset, \] on 
+                 définit aussi \(\pi_{\left(n\right)}\) tout
+                 comme
+                 \(\pi_n\) <em>excepter </em> 
+                 que&nbsp;: 
+                 \[
+                 \mathrm{dom}\;
+                 \pi_{\left(n\right) }
+                 :=
+                 \bigcup_{j\geq n}
+                 M^n.
+                 \] 
+                 
+                 il est à noter que la première composante est obtenue avec \(\pi_0\)
+                 On peut aussi définir \(\pi_{n\vert l}\left(X\right)=x_n\)
+                 avec \[\mathrm{dom}\;\pi_{n\vert l}:=\begin{cases}
+                 
+                     M^l
+                     \text{ si }
+                     n\lt l\\
+                     \emptyset
+                     \text{ sinon.} 
+                     
+                     \end{cases}
+                     \] 
+                     Si \(f\)
+                     est une relation
+                     fonctionnelle
+                     à valeurs 
+                     dans 
+                     \(\mathbb{N}^2\)
+                     
+                alors on
+                définit&nbsp;: 
+                \[
+                \pi_{\left[f\vert J
+                \right]
+                }
+                :=
+                 \left[
+                 \pi_{
+                 f_0\left(j\right)
+                 \vert 
+                 f_1\left(j\right)
+                 }
+                 \right]_{j\in J}\]
+                 et puis,
+                 \[ \pi_{
+                 \left(
+                 f_0
+                 /
+                 f_1
+                 / J
+                 \right) 
+                 }
+                 :=
+                 \bigcup_{j\in J}
+                 \pi_{
+                 f_0\left(j\right)
+                 \vert 
+                 f_1\left(j\right)
+                 }.\] 
+               </p>
+               <p>
+                 le symbole
+                 d'égalité 
+                 au sens
+                 formelle 
+                 sera noté&nbsp;: 
+                 \[\simeq_1.\] 
+                 On utilise cette notation
+                 aussi pour 
+                 représenter 
+                 une relation
+                 d'équivalence 
+                 dont chacune 
+                 des classes
+                 sont des 
+                 singleton.
+                 
+                 On peut
+                 aussi 
+                 utiliser
+                 le symbole
+                 
+                 \(\simeq_{n,H}, \) 
+                 pour 
+                 chaque
+                 relation
+                 d'équivalence 
+                 telle que&nbsp;:
+                 \[H\left(X\right)
+                 \Leftrightarrow
+                 \left\{
+                 X
+                 =
+                 \mathrm{Cl}_{
+                 \simeq_{n, H}
+                 }
+                 \text{ et 
+                 chaque 
+                 classe est 
+                 de 
+                 cardinal }
+                 n\right\}
+                 \] 
+                 </p>
+                 <em>
+                <b>Attention</b>
+                dans 
+                 certaines
+                 situations
+                 </em>
+                 où \(n\) 
+                 est 
+                 un 
+                 entier 
+                 naturel 
+                 on 
+                 peut 
+                 exprimer que&nbsp;:
+                              
+                  \[C\left(x\right)\]
+                  est une 
+                  collection
+                  de cardinal 
+                  \(n\) par 
+                  la formule&nbsp; 
+      \(\exists_{=n} x:
+      C\left(x\right).
+      \) 
+      on peut 
+      définir aussi
+      de la 
+      même manière 
+      qu'avec 
+      les <i>symboles</i> 
+      \(\exists_{\lt n}, \) 
+       
+      \(\exists_{\gt n} \)
+      et puis
+      \(\exists_{n\in N}\) 
+                 
+                 les
+                 symboles 
+                 de 
+                 \[\simeq_{\lt n, H}
+                 ...
+                 \simeq_{n\in N, H_n} 
+                 \] 
+                 lorsque
+                 c'est possible [ cela 
+              dépendent de \(H\) ] 
+                </p> 
+                <p>
+                Si 
+                \(x\) 
+                est 
+                un symbole de 
+                variable 
+                alors
+                on
+                peut 
+                définir 
+                un
+                terme
+                \(p_x
+                \left(y_0...x..y_q\right)
+                \simeq_1
+                x\) 
+                On 
+                peut
+                formellement
+                substituer \(x\)
+                ou 
+                \(y_0..\)
+                par 
+                un 
+                autre
+                terme
+                c'est 
+                pour ça 
+                que l'on
+                dit 
+                que 
+                c'est 
+                une 
+                classe
+                de 
+                projecteur 
+                en 
+                effet
+                on
+                peut 
+                toute 
+                aussi 
+                définir
+                \(p_x:=x\)
+                c'est 
+                aussi un 
+                terme
+                qui 
+                est
+                une 
+                variable 
+                ca <b>
+                  ne dépendant pas
+                  </b> 
+                du 
+                <em>
+                  modèle choisie.
+                  </em>
+               </p>
+               <p>
+                <span class='noteinf'>
+                  Attention&nbsp;: 
+                  On vas définir 
+                  des projecteur
+                  qui 
+                  vont 
+                  nécessité 
+                  une contrainte
+                  sur les 
+                  signature 
+                  et structure
+                  ensuite 
+                  on vas définir
+                  un isomorphisme 
+                  entre les 
+                  algèbre de 
+                  cette 
+                  collection
+                  vers
+                  les autres
+                  algèbre.
+                  (
+               <abbr>i.e.</abbr> on a une collection \(\mathcal{M}_\mathrm{reg}\) d'algèbre que l'on peut envoyer avec un isomorphisme vers la collection toute entière des algèbre universel.
+               )
+                  
+                </span>
+                Si \(x\) 
+                est
+                un 
+                symbole de variable
+                on définit
+                le 
+                projecteurs&nbsp;: 
+                \[
+                \mathrm{pr}_x\;F
+                :=
+                \bigwedge_{
+                n_0,n_1
+                \in \mathrm{Var}_x
+                \left(F\right)} \pi_{n_0}
+                \simeq_1
+                \pi_{n_1}
+                \] 
+                et
+                puis&nbsp;:
+                \[
+                \mathrm{pr}_{x;N}\; F
+                :=
+                \bigwedge_{n_0,n_1\in \mathrm{Var}_x\left(F\right)\cup N} \pi_{n_0}\simeq_1 \pi_{n_1}\]
+                où&nbsp;:  \[\mathrm{Var}_x\left(F\right)\]
+                une 
+                relation
+                fonctionnelle 
+                définit 
+                par 
+                induction
+                sur
+                la hauteur
+                des composantes ( termes /formule atomique/sous-formules ) de \(F\) 
+               
+                en fonction deux relation fonctionnelle \(\alpha\) et \(D\) 
+                tel que la fonction \(\mathrm{Var}_x\) admet qu'une est une seule décomposition par l'induction suivante&nbsp;: 
+               <ol>
+                 <li>
+    pour chaque
+    terme 
+    \(t\left(y_0,..,y_l\right)\)
+    
+                 \[
+                \mathrm{Var}_x
+                \left[
+                t\left(
+                y_0...y_l
+                \right) 
+                \right]
+                :=
+                \left\{k\lt l
+                \vert
+                y_k
+                =
+                
+                x
+                \right\}.
+                \] </li>
+                <li>
+                Pour 
+                chaque
+                formule atomique
+                on définit&nbsp;: 
+                \[
+                \mathrm{Var}_x\;
+                R
+                \left(t_0...t_q\right)
+                :=
+                \bigcup_{i\lt q}
+                \alpha
+                \left(
+                t_i
+                \right).\left(1+\mathrm{Var}_x\;t_i\right)-1.
+                \]
+               
+                </li>
+                <li>
+                Pour une 
+                variable \(x\) 
+                et une 
+                formule \(F\)
+                on définit&nbsp;:
+                \[
+                \mathrm{Var}_x
+                \left[Q x F\right]
+                :=
+                \emptyset;
+                Q:=\forall..\exists.
+                \]</li>
+                <li>
+                Pour une 
+                variable \(y\neq x\)
+                on définit&nbsp;:
+                \[
+               
+                \mathrm{Var}_x
+                \left[Q y  F\right]
+                :=
+                \mathrm{Var}_x\; F;
+                Q:=\forall..\exists.
+                
+                \] où \(F\) 
+                est une formule.
+                </li>
+                <li>
+                Pour une 
+                proposition \(P, \)
+                on définit&nbsp;: 
+                \[
+                \mathrm{Var}_x\;
+                P\left[
+                F_0,..F_l
+                \right]
+                :=
+                \bigcup_{i\leq l}
+                \alpha\left(F_i
+                \right).\left(1+\mathrm{Var}_x\;F_i\right)-1.
+                \]
+                où chaque 
+                \(F_i;i:=0..l\) 
+                sont des formules dans le domaine \(P\)-dépendent de \(\alpha_i\).
+                ici on utilisera la notion de
+                domaine 
+                \(P\)-dépendent d'une fonction \(\alpha\) qui et représenter par un
+                couple \(\alpha,D\) tel que&nbsp;: \(D\) est une relation fonctionnelle 
+                vers une partie
+                de  domaine de \(\alpha_i\)
+                  on dit alors
+                  que \(F\) et
+                  dans le
+                  domaine 
+                  \(P\) dépendent de \(\alpha\) lorsque&nbsp;:
+                  \[\left(i,P,F\right)
+                  \text{ est 
+                  dans le domaine de }
+                  D
+                  \text{ et }
+                  F\in
+                  D\left(i,P,F\right).
+                  \]
+                </li>
+                </ol>
+                <p>
+                si en fonction de \(\alpha,D\) alors si pour chaque Formules \(F\) il existe qu'une seule valeur possible pour \(\mathrm{Var}_x\) 
+                on dit \(\alpha,D\) est bien choisi si de plus lorsque \(F\) est une formule où un terme qui possède \(N\) variable libre alors \(\alpha\left(F\right)=N\) lorsque 
+        
+           \(\VarInd\) est partielle alors on dit que \(\VarInd\) \(\alpha,D\)-partielle.</p>
+           <p>
+             On définit ensuite la fonction&nbsp;:  \[\VarInd_{x}\;F\;:=\mathrm{Inf}_{\alpha,D}\left[\VarInd_{x\vert \alpha ,D}\;F\right].\]
+             On va montrer que c'est un minimum.
+             <span class='must'>
+               TODO: faire la preuve!.
+               En faite il suffit de prendre&nbsp;: 
+               \[D\left(i,P,F\right):=\mathbb{A}\left(s\right)\] où 
+               \(\mathbb{A}\left(s\right)\) et l'ensemble des formules atomique sur une signature \(s\) aller disons une qui contient tout les symboles dont on a à faire.
+               et oui on va à l'encontre de la définition de sous-formule de <name>Getzen!.</name>
+               <span class='must'>mais attention les quantificateur vont posé problème par exemple dans le cas où \[
+               F:=P_0\left[QxP_1,.,QyP_j..P_k..\right]\] on peut donc ne pas prendre en compte \(QxP_1\) et remplacer \(QyP_1\) par \(P_1\) en suite on obtient une formule \(P\left[R_0...R_k\right]\) avec \(R_0...R_k\) atomique la valeur de \(\VarInd_x\;F\) reste minimale dans ce cas la en effet on a un jamais dit que \(P\) et une proposition de en faite on a juste pris une formule à trou sur les formule atomique.[TODO]&nbs;: on fera une démonstration plus rigoureuse... ( et on parlera de la skolemisation... )</span>
+               
+             </span>
+           </p>
+           <p>
+           bien sur si on on veut souligner le faite que la valeur de \(\VarInd\) dépend de \(\alpha,D\) on peut écrire \(\VarInd_{x\vert \alpha,D}...\vpr_{x\vert \alpha,D}\) si leurs domaine et partielle on peut le souligner en écrivent \(\vpr^*_{x\vert \alpha,D}\)
+           </p>
+           <p>
+             si chaque formule est dans le domaine des \(\vpr^*_{x\vert \alpha,D}\) et prouvable dans une théorie \(T\) alors on écrit \(\vpr^*_{T:x\vert \alpha ,D}\)
+             si c'est une condition nécessaire et suffisante alors on peut écrire 
+             \[\vpr_{T : x}\]
+             et \(T:\alpha,D\) on peut parfois remplacer "\(:\)" par "\(::\)" lorsque que \(T\) et une structure \(M\) et lorsque on a remplacé \(T\vdash F\) par \(M\vDash F.\)
+           </p>
+                <span class='hidden'>
+          \(\def\pr{\mathrm{pr}}\)
+                </span>
+                On 
+                vas 
+                s'autoriser
+                dans certaine 
+                situation 
+                l'écriture 
+                \(\pr_x
+                \simeq_1
+                \pr_y\)
+                dans le 
+                cas où les
+                classes
+                de 
+                \(\leftrightarrow\) sont
+                interprété sémantiquement
+                par des
+                singleton 
+                on peut aussi remarqué
+                que la formule
+                \(\pr_x
+                \leftrightarrow 
+                \pr_y\)
+                peut être
+                vue comme 
+                une égalité du style
+                \(x\simeq_1 y.\) </p>
+                <p>Si justement
+                on veut vérifier 
+                que \(x=y\)
+                ( <abbr>i.e.</abbr>
+                ce son les
+                deux même variable. ) 
+                On peut par exemple 
+                utiliser 
+                le schéma
+                formule&nbsp;: 
+                \[\forall t; 
+                \left[
+                x=y
+                \leftrightarrow
+                \left(
+                P\left(y,t\right) 
+                  \leftrightarrow
+                P\left(x, 
+                  t\right)
+                  \right)
+                \right]
+                \] 
+                ou par 
+                d'autre 
+                schéma 
+                par exemple en 
+                remplacent \(P\left(x, t\right) \) par \(P\left(y, x\right)\) est
+                \(P\left(y, t\right) \) par \(P\left(y, x\right) \) dans ce cas là il nous et faudrait des formules \(P\) qui ne sont des relations binaire symétriques.! bien entendu cela ne fonctionne pas très bien  dans le cas où le modèle admet un ensemble de base de cardinal \(1\) mais par contre dans les autres cas cela se tient on peut par contre justement dégager la théorie qui pourrait 
+                être restrictive
+                sur les
+                modèles 
+                de 
+                cardinal 
+                \(1\) 
+                du genre 
+                \(Ax_1
+                :=
+                \forall x\forall y;
+                x=y
+                \) 
+                même si 
+                cela 
+                n'est 
+                peut être pas
+                la bonne
+                façon. <em>
+                  <a href='#snrlvar'>
+                  On en 
+                  reparlera.
+                  </a>
+                </em>
+                  </p>
+                  <h3>
+                    étude de
+                    la famille 
+                  \(
+                  \left(
+                  \mathrm{Var}_x
+                  \right)_x
+                  \)</h3>
+                  <div>
+                    
+                <span class='noteinf'>
+                     On vas essayer de 
+                   faire une
+                   petite
+                   étude
+                   sénatoriales.
+                   <a href='#snrl'>
+                     Voir
+                   plus bas
+                   sur 
+                   l'acception
+                   de "étude
+                   sénatoriales"...
+                   </a>
+                   </span>
+                   <p>
+          <span class='must'>TODO HERE</span>
+                   </p>
+                   
+                 
+               <h6 class='objectif' style='margin-bottom:-5px;border-color:gray;'>HALT :
+               </h6>
+               <p  style='display:block;border-left:solid 1px gray;padding-top:8px;margin-left:4px;padding:4px;'>
+                  si 
+                  \(j=M\) 
+                  on
+                  peut 
+                  définir&nbsp;:
+                  \[
+                  \Lambda x;
+                  F
+                  :=
+                  \left(p_x\simeq_1 j
+                  \rightarrow
+                  F
+               \right)_{j\in M}
+               \]
+               On obtient 
+               ainsi une 
+               famille 
+               sur la 
+               quelle on 
+               peut 
+               appliquer 
+               \(\mathcal{L}_M\)...
+               On peut 
+               aussi
+               définir&nbsp;:  
+               \[\mathcal{V}_{\forall}
+               x;P
+               :=
+               \left(
+               \left(
+               \mathrm{pr}_x\;P
+               \leftrightarrow
+               \mathrm{pr}_t\; P
+               \right)
+               \rightarrow
+               P
+               \right)_{
+               t\in \mathcal{V}
+               } .
+               \] où 
+               \(\mathcal{V}\)
+               est une 
+               collection
+               de symboles
+               de variable
+               puis
+               on peut 
+               appliquer 
+               la fonction
+               \(
+               \mathcal{L}_\mathcal{V}
+               \) 
+               si 
+               la 
+               collection 
+               \(\mathcal{V}\)
+               et 
+               assez 
+               grande 
+               cela 
+               pourrait 
+               faire des 
+               variable 
+               qui 
+               respecte 
+               la 
+               condition
+               des
+               variables 
+               libres
+               dans
+               le cas
+               de
+               l'introduction
+               du 
+               quantificateur
+               universelle,
+               <em>( 
+               c'est 
+               une
+               histoire
+               de 
+                 bureaucratie
+                 selon
+                 <name>J-Y G</name> 
+                 je lui 
+                 répond en
+                 lui disant 
+                 on vient 
+                 de la
+                 manipuler
+                 pour rencontrer
+                 les responsable...
+                 </em>
+                 
+                 <br>
+               
+             <span class='noteinf' 
+             style='text-align: left;font-family:monospace;'>
+            <br>mais Dr ! ... 
+            C'est pas la 
+            sécurité 
+            sociale 
+            c'est le 
+            général  
+            ou le 
+            chef 
+            d'état
+            qui est
+            responsable
+           <i>et</i>
+           surtout pas 
+           les  ministre
+           et ni les 
+           députés.
+           <br>
+           je viens
+           justement de
+           vous montrer
+           les justificatifs..
+           <span id='snrl' style='color: rgb(30,64,33);'>[ 
+           c'est ça 
+           faire une étude 
+           sénatoriales 
+           je décrirais
+           cette méthode
+           plus en 
+           détail
+           [ sécurité sociale/ministère/général chef d'état/sénat. ] 
+           c'est 
+           une 
+           
+           métaphore
+           
+           avec 
+           le 
+           fonctionnement 
+           national 
+           vers le 
+           structuralisme...
+           </span>
+           </span>
+             </p>
+             <p>
+             On a en particulier&nbsp;:  
+             \[
+             \mathrm{Cl}\left\{\sigma_M\left[
+             \mathcal{L}_\mathcal{V}
+             \left[
+             \mathcal{V}_\forall x;P
+             \right]\right]\right\}
+             \] est une équivalence de type \(\simeq_1\) sur les classes propres, on va définir ce que cela veut dire.</p>
+             <h6>Définition 1<sup>er</sup></h6>
+             <p id='clp1Def'>
+             Les classes propres définies comme suit&nbsp;:\[\left(k, f\right) \text{ pour au moins un } i\text{ tel que } \left(k, i\right)\in \mathrm{Im} f^+;.\]</p>
+             <h6>Définition 2<sup>em</sup></h6>
+             <p id='clp2Def'>On verra que les classes propres sont aussi la collection suivante&nbsp;:
+             \[
+             \bigcup_{
+             F\in\mathrm{Form}
+             \left[\mathrm{sg}
+             \left(M\right)
+             \right]
+            }
+            \left\{\left(k, f\right)
+            \vert 
+           F^+_M
+            \left(k, f\right)
+            \neq
+            c^{\text{te}}_{0_A}
+            \right\}.
+            \] 
+            </p>
+            <h5 id='ClPropre1'>Petite étude des classes propres et questionnement sur les clocking&nbsp;: 
+            </h5>
+            <div>
+              <p>
+               
+              On a déjà définit les classes propres <a 
+              href='#clp1Def' >[voir la définition 1<sup>er</sup>] </a> et 
+              <a href='#clp2Def'> [voir la définition 2<sup>em</sup>]</a>
+              On vas donner une démonstration de leur équivalence. 
+              </p>
+              <h4>[PREUVE]</h4>
+              <div>
+                <span class='must'>TODO </span>
+                <p>
+                On peu déjà 
+                constater que 
+                l'ensemble
+                de la
+                définition 
+                (2) est
+                inclus 
+                dans 
+                l'ensemble de la première
+                définition.</p>
+                <p>
+                  Puis pour 
+                  montrer 
+                  la dernière inclusion on pose
+                  \(F:=\top\)
+                  on constate que 
+           <!--
+           by adrien koechler-Reeb
+           -->
+    \[
+    F^+_M
+    =
+      \top^+_M
+     =
+    \lambda \left(k,f\right).
+    \lambda i\in M.
+    \begin{cases}
+    \left(k,i\right)\text{ si }
+    \left(k,i\right)
+         \in
+    \mathrm{Im}\;f^+\text{ et } i\in M
+    \\
+    0_A\text{ sinon.}
+    \end{cases}
+   \] 
+   Donc cela 
+   montre 
+   que si&nbsp;:
+   \(\top^+_M\left(k,f\right)\neq c^\text{te}_{0_A}\) alors il existe au moins un \(i\)
+   tel que&nbsp;: 
+   \[
+   \left(k,i\right)
+   \in 
+   \mathrm{Im}\;f^+.
+   \]
+   <!--Todo justifie un plus...
+   akr.-->
+   Mais les ensemble&nbsp;: 
+   \[
+   C_2\left(F\right):=
+   \left\{
+   \left(k,f\right)
+   \vert
+   F^+_M\left(k,f\right)
+   \neq
+   c^{\text{te}}_{0_A}
+   \right\}
+   \]
+   sont toujours inclus dans
+   \(C_2\left(\top\right)\) (
+   <abbr>i.e.</abbr> c'est leurs maximum. )
+   donc l'union&nbsp;
+   \(\bigcup_{F} C_2\left(F\right)\)
+   et égale à \(C_2\left(\top\right),\)
+   qui correspond donc à l'ensemble de la première définition.
+   <span class='CQFD'>
+     \(\square.\)
+     <!--akr.-->
+   </span>
+   
+                </p>
+                
+              </div>
+  <h3 id='grphClocking2'>les graphe de clocking&nbsp;: </h3>
+  <div>
+    On vas définir des espèces d'arc 
+    entre des objet&nbsp;: 
+    <ol>
+      <li>On peut définir
+      les arc&nbsp;: 
+      \[
+      \left(
+      I,P:
+      u
+      \rightarrow
+      v
+      \right)_\alpha
+      \]
+      pour chaque élément de
+      \[u,v\in C_2\left(P\right)\]
+      tel que&nbsp;: 
+      \(\forall k\in I;u_i=u_i\)
+      avec \(I\subseteq 
+      \left\{0,1\right\}\)
+      </li>
+      <li>
+        On peu définir les arc&nbsp;: 
+        \[
+        c_\gamma:=\left(P:u \rightarrow v\right)_\gamma
+        \]
+        si il existe \(f\) et \(g\)
+        tel que
+        \(\left(u,f\right),\left(v,g\right)\in 
+        C_2\left(P\right)\) 
+        alors le couple 
+        \(\left(f,g\right)\)
+        est appelés
+        une résolvente 
+        de \(c_\gamma\)
+        on notera&nbsp;:
+        \[\Gamma\left(c_\gamma\right)\]
+        leur collection.
+        on peu définir les arc&nbsp;: 
+        \[\left(u,v,P:f\rightarrow g\right)_\Gamma \] dans ce cas,
+        on obtient donc un arc&nbsp;: 
+        \[\left(v,u,P:g \rightarrow f\right)_\Gamma\]
+        on appelle \(P\) le poids de ce type d'arc ,si deux arc \(U\) et \(V,\) ont des poids respectifs \(F_0\) et \(F_1\) qui dans un modèle 
+        \(M\) respectent la propriété suivante 
+        \[M\vdash F_0\rightarrow F_1\]
+        on dit que \(U\) est plus fort que \(V\) si cette implication est strict on dit que \(U\) est strictement plus fort dans \(M\) sinon on dit qu'il de poids aussi fort sur \(M.\)  toute ces espèces dépend du modèle.<br>
+        <p style='margin-top:11px; border: solid 1px rgb(30,74,54);border-bottom :solid rgb(30,74,53) 1px ;text-align:left;margin-left:-2px ;margin-bottom:-4px;display block;border-right:solid 0px black;'> On  peut décrire un système à-la Getzen
+        </p>
+        <p style='text-align:left ;border-left:solid rgb(30,74,53) 1px;margin-top:-5px;padding:8px;'>
+          \[\frac{\left(
+              u,v,Q:
+              f
+              \rightarrow 
+              g
+              \right)_\Gamma 
+              \;\;
+              \left(
+              v,w,Q:
+              g
+              \rightarrow 
+              h
+              \right)_\Gamma}
+              {  \left(
+              u,w,Q:
+              f
+              \rightarrow 
+              h
+              \right)_\Gamma
+              }\text{Cat}_\Gamma\;\circ_{\Gamma\vert Q}:\Gamma \times \Gamma\mapsto \Gamma.
+              
+         \]
+         Car si les deux prémisse sont respecté on a \(\left(u,f\right),\left(w,h\right)\in C_2\left(Q\right).\)
+\[\frac{\left(
+              u,v,P:
+              f
+              \rightarrow 
+              g
+              \right)_\Gamma 
+              \;\;
+              \left(
+              v,w,Q:
+              g
+              \rightarrow 
+              h
+              \right)_\Gamma}
+              {  \left(
+              P\vee Q:u
+              \rightarrow 
+              w
+              \right)_\gamma
+              }\Gamma^2\mapsto\gamma:\circ_{\gamma\vert P,Q}:\Gamma \times \Gamma\mapsto \gamma .
+              
+         \]
+        \[
+        \frac{\left(P:u\rightarrow v\right)_\gamma\;\;\;\left(Q:u\rightarrow v\right)_\gamma
+        }{\left(P\wedge Q:u\rightarrow v\right)_\gamma}\wedge_i:\left (\gamma\times \gamma
+        \right)\mapsto \gamma
+        \]
+        \[
+        \frac{\left(u,v,P:f\rightarrow g\right)_\Gamma\;\;\;\left(v,u,P\rightarrow B:g\rightarrow f\right)_\Gamma }
+        {\left(B:u\rightarrow v
+        \right)_\gamma}\text{e.g. cut}:(\Gamma\times \Gamma\mapsto \gamma)
+        \]
+        
+        \[
+        \frac{\left(v,u,P:g\rightarrow f\right)_\Gamma\;\;\;\left(u,v,P\rightarrow B:f\rightarrow g\right)_\Gamma }
+        {\left(B:u\rightarrow v
+        \right)_\gamma}\text{e.g. cut}:(\Gamma\times \Gamma\mapsto \gamma)
+        \]
+        <!--akr exemple de coupure -->
+        </p>        
+        On a aussi&nbsp;:
+         \[\left(a\circ_{\Gamma\vert Q}b\right)\circ_{\Gamma\vert Q}c=a\circ_{\Gamma\vert Q} \left(b\circ_{\Gamma\vert Q} c\right)=\left(u,x,Q:f\rightarrow i\right)_{\Gamma}\] où \[a:=\left(u,v,Q:f\rightarrow g \right)_\Gamma;b:=\left(v,w,Q:g\rightarrow h \right)_\Gamma;\left(w,x,Q:h\rightarrow i \right)_\Gamma\] 
+         on parle
+         de la \(\Gamma\vert Q\)-catégorie sur 
+         une 
+         structure \(M,\) les appels des
+         \(\Gamma\)-catégorie. on va en reparler plus tard  <a href='#GammaQcat0'>voir plus loin : [ Petite étude des \(\Gamma\)-catégories  ]</a>
+      </li>
+      <li>
+        Soit \(a_0\) un arc.
+        lorsque qu'un arc
+        \(a_1\) n'est pas un arc 
+        \(\gamma\)  dans \(M\) seulement si
+        \(a_0\) n'est pas un arc
+        \(\gamma\)  dans \(M,\)   
+        alors  
+        on forme un arc&nbsp;:
+        \[
+        i_\rightarrow:= \left(M:a_0\sqsubseteq a_1\right)
+        \]
+        si de plus \(a_0\) est strictement moins fort que \(a_1\) sur \(M\) alors on dit que cette arc est orthomorphe, on note alors&nbsp;: 
+        \[
+        i_\rightarrow:= \left(M:a_0\sqsubset_\perp a_1\right) .
+        \] 
+        <p>On peu se demander si il existe des arc orthomorphe!. dans le  cas où pour toutes  les formule \(F\) sur la signature de \(M\) respectent la propriété \(M\vdash F\leftrightarrow \top\) ou \(M\vdash F\leftrightarrow \bot\) alors on ne peut pas trouver d'arc orthomorphe, on va par contre montrer qu'il existe des enrichissement de \(M\) tel qu'il en existe</p>
+        <p class='noteinf'>
+        Ceci va peut-être nous fournir une relation de bonne-ordre sur les composantes de clocking.</p>
+        <p>
+        On peu définir la collection \(\mathcal{H}^\prime_\gamma\left(M\right)\) comme la collection des arc \(u\) tel qu'il existe un enrichissement \(M^\prime\) de \(M\) tel que&nbsp;: \[u\in\mathcal{H}_\gamma\left(M^\prime\right)\] où 
+         \(\mathcal{H}_\gamma \left(M\right)\) est la collection des arc orthomorphe de \(M.\)</p>
+         <p>
+           si \(u,v\in \mathcal{H}^\prime\left(M\right)\)
+           et si \(u,v\in \mathcal{H}\left(M^\prime \right)\) alors on dit que \(M^\prime\) un environnement de \(\left(u,v\right).\)</p><p>
+           Si il existe un environnement \(N\) de \(\left(u,v\right)\) on dit que \(\left(u,v\right)\) sont ortho-compatibles.
+           <p>
+             Si les Langage de d'enrichissement des poids des arc \(u_0\) et respectivement \(v_0\) de \(\mathcal{H}^\prime\left(M\right)\)
+             sont \(l_0\) 
+             <abbr>resp.</abbr>
+             
+             \(l_1\) avec \(l_0\cap l_1\subseteq \mathrm{sg}\left(M\right)\) ) et puis&nbsp;: \[\mathrm{sg}\;N_i=l_i;i:=0..1\]  lorsque 
+             \[u_i\in \mathcal{H}\left(N_i\right);i:=0..1\]
+             on dit que \(u_0\) et \(u_1\) sont hypocompatible. <!--si deux arcs sont compatibles mais pas hypocompatible.. pas possible--> 
+             <span class='noteinf'><span class='must'>TODO&nbsp;</span>
+             <span class='must'>TODO à-retravailler....
+             
+             
+             </span>
+             <br>
+             Regarder des cas applications du le lemme d'interpolation...
+             </p>
+             
+             <p>
+  On rappelle que les éléments des 
+             collections 
+     \(\mathcal{H}\left(M\right)\)
+     et 
+     \(\mathcal{H}^\prime\left(M\right)\) 
+     sont des couples 
+     d'arc 
+     \(\gamma\) 
+     ( 
+     <abbr>i.e.</abbr>
+         \(a_\gamma
+         \sqsubset_\bot
+         b_\gamma
+         \)
+    )
+              
+    donc on obtient un couple de poid 
+    
+       \(\left(U,V\right)\)
+       
+ que l'on
+       associe à 
+       deux espèce d'arc 
+   \(
+       \left(
+       M:
+         U
+         \rightarrow 
+         V
+       \right)_H
+   \)
+   pour 
+   \(
+   H:=
+   \mathcal{H}..
+   \mathcal{H}^*.
+   \)
+           </p>
+         
+         <p>
+          On définit aussi les arcs&nbsp;: 
+        \[
+      
+        \left(M:u\backslash v\right)_\gamma
+        \]
+        si es seulement s'il existe un enrichissement \(M^\prime\) avec deux arc 
+        \(
+        \left(u,u,P:f\rightarrow g\right)_\Gamma\) puis \(\left(v,v,Q:f\rightarrow g\right)_\Gamma\) sur \(M^\prime\) tel que&nbsp;: \[\left[M^\prime:\left(P:u\rightarrow v\right)_\gamma
+ \sqsubset_\perp\left(Q:u\rightarrow v\right)_\gamma
+        \right].
+        \]</p>
+        <p>
+        On vas montrer que la règle&nbsp;: 
+        \[
+        \frac{\left(M^\prime:u\backslash v\right)_\gamma\;\;\;\left(M^\prime :v\backslash w\right)_\gamma }
+        {
+        \left(M^\prime:u\backslash w\right)_\gamma
+        }\text{ClkT}_\gamma
+        \] est respecté pour un enrichissement \(M^\prime\) de \(M\) ( <abbr>i.e. </abbr> c'est 
+        la transitiviter. )</p>
+        <p class="ref">
+        <i>Voir plus bas la preuve</i>&nbsp;:  
+        <a href='#proofClkTgamma'>[&nbsp;PREUVE&nbsp;: de la règle \(\text{ClkT}_\gamma.\) ]</a>
+        </p>
+        <p>
+          On a évidemment la règle&nbsp;:
+          \[
+          \frac{
+          \left(
+          M^\prime:u\backslash v
+          \right)_\gamma
+          }
+          {
+          \left(M:u \backslash v\right)_\gamma
+          }\text{ClkUp}_\gamma
+          \]
+          Puis la règle suivante n'est pas si trivial 
+          \[
+          \frac{
+          \left(
+          M:u\backslash v
+          \right)_\gamma
+          }
+          {
+          \left(M^\prime:u \backslash v\right)_\gamma
+          }\text{ClkDown}_\gamma
+          \]
+            <span class="ref">
+        <i>Voir plus bas la preuve</i>&nbsp;:  
+        <a href='#proofClkDowngamma'>[&nbsp;PREUVE&nbsp;: de la règle \(\text{ClkDown}_\gamma.\) ]</a>
+        </span>
+        
+        </p>
+        
+          <p class='noteinf'>
+            par la suite lors que l'on dit "...sur \(M\)..." alors on suppose que \(M^\prime\) est un enrichissement de \(M.\)
+          </p>
+          <p>
+         On définit la collection sur \(M\)&nbsp;: 
+   \[
+    I_\gamma\left(M^\prime:*\backslash v\right):=
+    \left\{u;\left(M^\prime :u\backslash v\right)_\gamma\text{ est un arc sur } M\right\}.
+    \]
+    On définit l'arc sur \(M\)&nbsp;: 
+    \[\left(u\backslash M^\prime
+    \right)_\gamma\]
+    si il existe \(v,\)
+    tel que 
+    \(u\in I_\gamma\left(M^\prime:*\backslash v\right).\)
+    On définit aussi la collection&nbsp;: 
+    \[
+    F_\gamma\left(M^\prime:u\backslash *\right):=
+    \left\{v;\left(M^\prime :u\backslash v\right)_\gamma\text{ est un arc sur } M \right\}.
+    \] Puis l'arc&nbsp;: 
+    \[\left(M^\prime\backslash v\right)_\gamma\]
+    si il existe \(u,\) tel que 
+    
+    \(v\in F_\gamma\left(M^\prime:u\backslash *\right).\)
+        </p>
+      </li>
+    </ol>
+    <!--
+    On définira :
+    
+         d'autres espèces d'arc..
+                    
+                             akr...
+    -->
+    <h3>étude des différents enrichissement de structure dans le cas des questionnement sur le clocking.</h3>
+    <div>
+      <p class='noteinf'>
+      On vas brutalement définir peut-être intéressant dans le cas du clocking et les relations d'ordre sur la composante de clocking.</p>
+      <p>
+      On définit un enrichissement 
+      \(\mathcal{F}^*\;M\)   
+      d'une structure \(M\) de la façon suivante&nbsp;: 
+      On se donne une famille 
+      \[ 
+      \left(
+          \bar f_n
+      \right)_{
+             f\in M^n;
+             n\in \mathbb{N}
+           }
+      \]
+      de symboles de fonction  disjoint de l'ensemble des symboles de fonction de la signature de \(M,\) que l'on interprète de la façon suivante&nbsp;: 
+      \[
+      \forall n\in \mathbb{N};
+      \forall f\in M^n
+      ;
+      \left(
+      \bar{f}_n
+      \right)_{
+      \mathcal{F}^*\;M}=f
+      .
+      \]
+  
+      puis on définit aussi l'enrichissement&nbsp;: 
+      \[
+      \mathrm{clk}\;M
+      \] de \(
+      \mathcal{F}^*\;M
+        \)
+      
+   de la façon suivante&nbsp;: 
+      
+ On ajoute des 
+     symboles de prédicat&nbsp;: 
+   \[
+     \mathrm{Clk}_{f_{n,k}}
+   \] où \(f_{n,k}\) est
+   une application de 
+   \(M^n\) vers \(M^k\) avec
+   \(n,k\in\mathbb{N}.\)
+   On  interprète ces symboles supplémentaires de la façon suivante&nbsp;: 
+   \[
+   \left(
+   \mathrm{Clk}_{f_{n,k}}
+   \right)_{\mathrm{clk}\;M}
+   :=
+   \mathrm{Graph}
+   \left(\lambda t.\left(f^+_{n,k\vert P^\prime}\left(t\right)\right)\left(P^\prime\right)\right)\times \mathrm{Graph}\;P^\prime.
+   \]
+  je vais détailler cette dernière définition ici on a utilisé le 
+  clocking \(f^+_{n,k\vert P^\prime}\) de \(f_{n,k}\) 
+  
+  <abbr>i.e.</abbr> \(f^+_{n,k}\) qui naturellement ne peut pas être interpréter comme on la définit plus haut par&nbsp;:
+  
+  \(\lambda t.
+  \lambda P^\prime\in f^\tau_M.
+  \left(P^\prime\left(t\right),
+  f\left(t\right)\right).
+  \) 
+  on va utiliser plutôt
+  \[f^+_{n,j,P^\prime} 
+  :=
+  \lambda t.
+  \left(f^+\left(t\right)\right)\left(P^\prime\right).\]
+  puis on va définir le symbole de prédicat \(G_f\)
+  
+  que l'on interprète de la façon suivante&nbsp;: 
+  \[
+  \left(G_f\right)_M:=\left\{u\in M^{m+2n}\vert 
+  \exists P^\prime\in f^\tau:
+  u_{12}:=\left(P^\prime\left(u_0\right),f\left(u_0\right)\right)\right\}.
+  \]
+  <!--
+  puis on définit un symbole prédicat&nbsp;: 
+  \(
+  \mathcal{G}_{f/g}:=\left\{
+  u\vert \vert \exists! P^\prime
+  :
+  G_f\left(f\left(t\right),y\right)\vee G_f\left(..\)
+  
+  
+  \)
+  -->
+  
+<!--
+bookmark[akrdec2424]
+--->
+      </p>
+    </div>
+    <h3 id='proofClkTgamma'>[&nbsp;PREUVE&nbsp;: de la règle \(\text{ClkT}_\gamma\)&nbsp;]</h3>
+    <div>
+      <span class='must'>TODO</span>
+      ...<p>
+        On a donc&nbsp;: 
+      \[
+       C_2\left(Q\right)
+        \subset 
+       C_2\left(P\right)
+      \]
+      avec
+      \(
+      \left(u,f\right),
+      \left(u,g\right)
+       \in 
+      C_2\left(P\right)
+      \) et \(
+      \left(v,f\right),\left(v,g\right)\in C_2\left(Q\right).
+      \)
+      Ainsi
+      \[
+      \left(u,f\right),\left(v,f\right),
+      \left(u,g\right),\left(v,g\right)
+      \in 
+      C\left(P\right).
+      \]
+      Mais il existes 
+      \(
+       \left(
+        p,q
+       \right)
+      \) tel que&nbsp;: 
+      \[
+      \begin{cases}
+      \left(u,p\right)
+       \in
+      C_2\left(Q\right)
+      \\
+      \left(v,q\right)
+       \in
+      C_2\left(Q\right)
+      \end{cases}
+      \]
+      seulement s'il existes 
+      \(
+        \left( 
+             p^\prime ,q^\prime
+        \right)
+      \)
+      tel que&nbsp;: 
+      \[
+      \begin{cases}
+      \left(u,p^\prime\right)
+       \in
+      C_2\left(P\right)
+      \\
+      \left(v,q^\prime\right)
+       \in
+      C_2\left(P\right).
+      \end{cases}
+      \]
+      Donc puisque 
+      \(C_2\left(Q\right)
+        \subset 
+       C_2\left(P\right),
+       \)
+      on obtient&nbsp;: 
+      \[
+      \begin{cases}
+      \left(u,p\right)
+       \in
+      C_2\left(P\right)
+      \\
+      \left(v,q\right)
+       \in
+      C_2\left(P\right).
+      \end{cases}
+      \]
+      Mais on déjà montré que si \(p^\prime:=f;q^\prime\)
+      alors&nbsp;: 
+      \[
+      \begin{cases}
+      \left(u,p^\prime\right)
+       \in
+      C_2\left(P\right)
+      \\
+      \left(v,q^\prime\right)
+       \in
+      C_2\left(P\right).
+      \end{cases}
+      \] 
+      donc sur \(M^\prime\) on a un arc&nbsp;:
+      \[\left(u,v,Q:f\rightarrow g\right)_\Gamma.\]</p>
+      <p id='thissubpclkt'><span class ='must'>( halt )</span><br>
+      On peut réitérer le résonnement en remplacent simultanément&nbsp;:
+      \(\left(u,f
+      \right)\) par \(\left(v,g\right)\)  et puis \(\left(v,g\right)\) par \(\left(w,h\right)\) ensuite pour le poids \(P\) par le poids \(Q\) puis pour le poids \(Q\) par un poids \(R\) on a par hypothèse forcément les inclusion&nbsp;:  \[C_2\left(R\right)\subset C_2\left(Q\right)\subset C_2\left(P\right)\]
+      on obtient ainsi sur \(M^\prime\) un arc&nbsp;:\[\left(v,w,Q:g\rightarrow h\right)_\Gamma .\]
+      </p>
+      <p>
+        Ainsi sur \(M^\prime,\) 
+        on a deux arc&nbsp;:
+        \[   \left(
+              u,v,Q:
+              f
+              \rightarrow 
+              g
+              \right)_\Gamma 
+              \;\;\;
+              \left(
+              v,w,Q:
+              g
+              \rightarrow 
+              h
+              \right)_\Gamma 
+        \] donc sur \(M^\prime\) on a l'arc&nbsp;: 
+        \[
+        \left(Q:u\rightarrow w\right)_\gamma.
+        \]
+        puis par l'inclusion \(C_2\left(Q\right)\subset C_2\left(P\right)\)
+        On a sur \(M^\prime\) l'arc&nbsp;: 
+        \[
+        \left(P:u\rightarrow w\right)_\gamma.
+        \] en effet car on a vu que \(C_2\left(R\right)
+        \subset
+        C_2\left(P\right).\)
+        On donc prouvé que l'on a l'arc&nbsp;:  
+        \[
+        \left(M^\prime :u\backslash w\right)_\gamma.
+        \] sous les hypothèse que l'on a les arc&nbsp;:
+        \[
+        \left(
+        M^\prime : 
+             u\backslash v
+        \right)_\gamma
+        \;\;\;
+        \left(
+        M^\prime : 
+              v\backslash w
+        \right)_\gamma.
+        \]
+        <span class='noteinf'>
+          <span class='must'>Todo{à finir}
+            <br>[
+            j'ai put obtenir la conclusion de la règle à partir d'une même formule \(P\) de \(M^\prime\) mais on doit prouvé que tantôt pour les deux arcs de la prémisse cela peut se faire.
+            on peu effectivement constater que les deux prémisse n'utilise pas les point donc que dans la <a href='#thissubpclkt '>
+            substitution simultanée</a> que j'ai utilisé dans la preuve on a besoins de faire aussi une substitution simultanée des poids ( en effet une implication ou une inclusion ne sont pas des ordres total. a peut-être besoins de trouver une chaîne d'inclusion.. )
+            <br>]
+            
+          
+          </span>
+         La conclusion que j'ai obtenu pour l'instant dépend de 
+         \(P\) 
+         mais ce n'est pas un problème car les autres poids peuvent impliquer \(P\) sur la structure \(M^\prime.\)<br>
+         Il et à noter que ces implication sont script donc il nous faut une algèbre à plus de trois éléments ce qui est le cas car elle sont en quelques que "sorte"  des algèbre de bool a plus de deux éléments elle sont donc à au moins quatre éléments!. donc en première-abord rien n'empêche d'avoir a faire un relation d'ordre au sens large.
+        </span>
+      </p>
+      
+    </div>
+  </div>
+            </div>
+             <span class='noteinf'>
+               TODO{plus tard}
+               <br>&nbsp;[
+               voir l'équivalence entre ces deux derniers définitions et le prouver, puis établir des nuances et autres définitions..( et justifier et prouver..
+               puis le pousser jusqu'à c'est retranchements et justifié. ) <br>
+               <h6>Attention&nbsp;: le clocking peut être étudié par le biais des classes propres </h6>
+               cela peut être un début d'étude du clocking <a href ='#ClockAndGrph1'>[Voir ce TODO]</a>
+               <br>
+               <a href='#ClPropre1'>[étude des classes propres]</a>
+               <br>&nbsp;]<br>
+               &lt;&lt;<br>
+               #processus&nbsp;:
+               <br>
+               ce type de TODO appartient a un de mes patron&nbsp;:
+                (MAXtoMAXandStop{tsats} )
+               
+               <br>&gt;&gt;<br>
+             </span>
+             lorsque \(P\) est une formule universellement valide et \(\mathcal{V}\) et assez grande, donc lorsque cela se produit pour chaque  \(M\in\mathrm{MOD}\left(T\right)\) alors c'est un théorème des \(T\) la réciproque et aussi vrai. Si nous
+             voulons
+             que
+             se soit 
+             une 
+             équivalence
+             de type \(\simeq_1\)
+             sur toutes 
+             les 
+             classes
+             il nous
+             faut 
+             utiliser
+             le symbole 
+             de 
+             switch&nbsp;: 
+             On replace 
+             \(\neg P\)
+             par \(-P\)
+             qui
+             est 
+             interprété 
+             par 
+             \(P^-_M.\) On  autorise le système de règle des signes si on utilise à la place de \(-P\) le signe \(-+P\) 
+             si on applique   cela à toute les sous formule \(P\in W\) d'une formule \(F\)  alors cette nouvelle formule sera noter
+            \[F\backslash W_{-+}.\] si on autorise la règle des signes sinon on peut écrire \[F\backslash W_-\] on va parler de cette nuance qui est utilisée pour éviter de faire une application multiple de la substitution par exemple&nbsp;:
+            \[\neg \neg F\backslash_-\] est interprété par&nbsp;:
+            \(\left(\neg F\right)^-_M\) et tandis que 
+            \[\neg\neg F\backslash_{
+            -+}\] 
+            et 
+            interprétée 
+            par&nbsp;: 
+            \[F^+_M\]
+            il y'a différence dans les deux interprétation, on vas faire des exemple&nbsp;: 
+            <h3>Les nuances des signes </h3>
+            <div>
+              <span class='must'>
+                TODO{
+                1<sup>er</sup>
+                }<br>[<br>&nbsp;étape (2)...&nbsp;<br>]<br>
+              </span>
+              On peut notamment déjà commencer par constater que&nbsp;: 
+              \[F_0
+              \left[\mathcal{V}_\forall x;P\right] 
+              \backslash \left\{
+              p_u\simeq_1 p_v;
+              u, v\in V
+              \right\}_{-}.
+              \] 
+              <span class='must'>TODO{étapes (2)}<br>[<br>Trouvé 
+              une
+              formule  \(P\) 
+              qui 
+              change 
+              de valeur 
+              lorsque que 
+              l'on fait 
+              les 
+              nuances 
+              des 
+              signes.<br>] </span>
+              en effet 
+              il
+              suffit de
+              prendre&nbsp;: 
+              \[
+              P_0
+              :=
+              
+              p_x\not
+              \simeq_1 p_y
+              \rightarrow p_x\simeq p_x
+              \] où \(P:=\neg P_0\) l'exemple \(F_0\) est
+              interprété de la
+              façon 
+              suivante&nbsp;: 
+              \[
+              \bigwedge_{t\in
+              \mathcal{V}} \mathrm{Cl}\left[\left(\neg P_0\right)^+_M
+              \rightarrow^*
+              \left(p_x\simeq_1 p_t\right)^+_M 
+              \right] 
+              \] 
+              tandis que l'exemple
+              \(F_1\) où l'on a changé le \(-\) par un \(-+\) est interprété par la même formule mais on peut parfois
+              pousser la 
+              nuance plus
+              loin
+              justement 
+              avec la théorie de la démonstration es les sous formule et encore 
+              aussi en 
+              supposent 
+              que les classes de la forme 
+              \(\left(k, f\right)\) ne sont pris que pour certains termes ou d'autres collections de  fonctions...<br><span class='must'>TODO{étapes suivantes voir plus tard}<br> [ On verra aussi le cas du clocking sur les différentes espèces de projecteur...<br>
+              ]
+              </span>
+            
+              
+               
+            </div>
+            <h3>la "Diracdisiter" des substitution [ un peu comme avec les distribution et les impulsion \(\delta_y\) 
+            
+            ] 
+            </h3>
+            <div>
+              <p>
+              On vas s'autoriser à définir la fonction \[\Delta_{t\vert M} :=\lambda y.\lambda \left(k, f\right).\lambda i.\begin{cases} 0_A\text{ si } f\left(i\right)\neq t_M\left(i\right) \\
+              y\text{ sinon.} 
+              \end{cases}
+              \] </p>
+              <p>
+              Puis si on se donne une bijection
+              \(\varphi\) 
+              alors on
+              définit&nbsp;: 
+              \[\delta_{t\vert M;\varphi}
+              
+              :=
+  
+              \lambda \left(k, f\right).\lambda i. 
+              \left[\Delta_{t\vert M}\left(\varphi\left(k, i\right)\right) \right]\left(k, f\right).\] </p>
+             <p>Dans 
+             le
+             cas
+             où
+             \(\varphi\) est
+             une
+             application ( 
+             ou relation 
+             fonctionnelle ) identique
+             sur un certain domaine
+             alors
+             on
+             pourra écrire
+             \(\delta_{t\vert M},\)
+             au lieu de
+             \(\delta_{t
+             \vert M;\varphi
+             }.\)</p>
+             <span class ='must'>TODO{..}<br>[
+             faire intervenir 
+             justement 
+             le domaine ou
+             l'image..de \(\varphi\)
+             pour obtenir
+             le 
+             modèle 
+             sur les quel
+             on 
+             évalue les termes 
+             pour 
+             remplacer 
+             \(
+             \delta_{t\vert M;\varphi}
+             \) 
+             par 
+             \(\delta_{t;\varphi}\) 
+             et 
+             trouver 
+             d'autres "espèces" de "delta" 
+            <br>] 
+            </span>
+            <h3 id='M2delta'>les "delta" représentation</h3>
+            
+             On peut formellement
+             représenter 
+             les
+             propriété&nbsp;: 
+             \[M\vDash F\left[x\right] \rightarrow x\simeq_1 t\] 
+             par \(\delta_{t, M}\wedge \mathrm{Cl}\; F^+_M\)
+             est une 
+             relation 
+             d'équivalence de 
+             type \(\simeq_1\) 
+             sur les classes propres.
+             
+              <h4>[ preuve
+              ] ( brouillon ) </h4>
+              <div><p>
+                En effet car si&nbsp;: 
+                \[
+                M\vDash F\left[x\right]
+                \rightarrow 
+                x\simeq_1 t
+                \] 
+                 alors 
+                 \[
+                 \forall k, f;\;
+                 \left[
+                 k, f
+                 \right]_{Q^+_M}
+                 \subseteq 
+                 \left[
+                 k, f
+                 \right]_{F^+_M} 
+                 \] 
+                 où&nbsp;:
+       \[Q:=x \simeq_1 t.\] 
+Puis pour les éléments \(\left(k, f\right) \) des classes propre de \(M, \) on pose&nbsp;:
+
+\[w:=Q^+_M\left(k, f\right)\] 
+ 
+On a alors&nbsp;: 
+\(w\left(i\right):=\left(k, f\right)\) 
+si est seulement si&nbsp;:
+<ol>
+<!--li>\(i_0=i_1\right)</li-->
+<li>\(i_0=t_M\left(i\right).\) </li>
+<li>\(\left(k, i\right)\in \mathrm {Im}\; f^+.\)</li>
+</ol></p>
+<p>Mais par hypothèse si \(F^+_M\left(k, f\right)\left(i_0,i_1..\right)\neq 0_A\) les deux conditions se sont réalisés en effet car la deuxième ne dépend pas du choix du prédicat et donc \(\left(k, i\right)\in \mathrm{Im} \;f^+\) puisque on a affaire à une classe qui son toute des singleton car&nbsp;:  \[\left[k, f\right]_{Q^+_M}\subseteq \left[k, f\right]_{F^+_M} =\left\{.\right\}.\]  On est donc dans le cas où le "delta" n'est pas nul, car en effet on a \(i_0=t_M\left(i\right)\) donc&nbsp;:
+\[D:=\delta_{t\vert M}\left(k, t\right)\left(i\right) =\left(k, i\right)\] donc si dans cette dernier égalité, on remplace \(\left(k, t\right)\) par \(\left(k, f\right)\) on obtient&nbsp;:
+\[D_1:=\left(k, i\right)\] 
+car \(f\left(i\right)=t_M\left(i\right) \) 
+<p class='must'>Check...TODO&nbsp;:continuer...</p>
+sinon la première n'est pas réalisé c'est donc le cas où le "delta" est nul.
+</p>
+<p>
+On voit donc que le delta est 
+nul si  \(F^+_M\) et null 
+puis si cette 
+condition est 
+réalisé alors 
+on peut voir&nbsp;:
+\[
+M\vDash F\rightarrow x\simeq_1 t
+\] 
+</p>
+
+
+
+                
+              </div>
+              
+            </div>
+                  </div>
+                  </div>
+            
+   <div class='objectif' id='objectifsam21dec24'>
+     <div id="errDelta12">
+     La définition des \(\delta\) ne répond pas au metamodèle le décrivant..
+en effet car il y a pas de cohérence avec les différentes distinctions prédicat termes
+le metamodèle qui j'ai définit correspond à la substitution d'une variable par un terme ( celui qui index les delta )
+on peut aussi voir un autre metamodèle
+qui est celui qui respecte la propriété évoqué dans mon document ( #M2delta  : [les "delta" de représentation] )
+celui qui est associé à la substitution correspond au metamodèle ( #M1Subdelta )...</div>
+<h2 id='ClockAndGrph1'></h2>
+<div class='must'>
+Todo : (#ClockAndGrph1)
+On va étudier les clocking et étudier leur propriété puis on fera une représentation à l'aide des graphe orienté value et coloré
+en faisant une identification des espèces d'arc essentiel au résonnement sur les clocking et des différentes propriétés liés au cosimplex et algèbre universel.
+</div>
+</div>
+
+        </div> 
+               
+                    
+                      
+                      On peut définir les variables par des projecteur on les note \(\pi x\) puis \(x^+:=\pi x\rightarrow \
+                      \pi x\) 
+                      Ensuite on définit \[
+                      a \simeq_1 b:=
+                      
+                      \lambda t\in\left\{z;a\left(z\right)=b\left(z\right)\right\}.t
+                       
+                    \] 
+                    puis \[
+                    a\simeq_0 b:=\lambda t\in\left\{z;a\left(z\right)\neq b\left(z\right)\right\}.v_{a,b}
+                    \] 
+                     où \(v_{a,b}\) est un élément de l'image de 
+                     \(a\simeq_1 b\) ainsi on obtient une application de domaine vide&nbsp;:
+                     \[
+                     \left(a \simeq_0 b\right) \circ \left(a\simeq_1 b\right) 
+                     \] 
+                     et une application de domaine un singleton&nbsp;:
+                     \[
+                     \left(a\simeq_1 b\right) \circ \left(a\simeq_0 b \right) 
+                     \]
+                     qui sont donc toutes les deux des injection et des  constante, c'est une cohabitation du l'absurde et du vrai qui est peut être associée à la règle&nbsp;: 
+                     \[
+                     \frac{\Gamma \vdash A\;\;\Gamma\vdash \neg A}{\Gamma\vdash \bot} 
+                     \] On peut éventuellement représenté le connecteur \(\wedge\) par \(\circ\) car la composition d'une constante avec autre chose est constante et de deux injections et une injection,<p class ='noteinf' >justement le domaine résultant et une hypothèse mais attention sa ne commute pas mais on peut jouer la dessus notamment en posant&nbsp;: \[ \Gamma_0...\Gamma_q\vdash ..\] 
+                     comme \(..., \Gamma_i\circ \Gamma_j\vdash..\) cela fonctionne parfaitement dans le cas de \(x=x\wedge x\neq x\) 
+                     </p>
+                     
+                    <p> On définit&nbsp;: 
+                     \[
+                     a\simeq b:=\bigcup_i a \simeq_i b
+                     \] et sont doubles clocking&nbsp;: 
+                     \[
+                     a\simeq^{*} b:=\bigcup_i\left(a \simeq^+_i b\right).\] c'est une injection de domaine \(\mathrm{Dom}\;a\cap\mathrm{Dom} \;b\) qui a deux paires \(\left(u_i,v_i\right)_{i=0..1}\)  de composantes injective (en somme disjointe) , on peut donc définir \[l^i_{a=b}:=\left(u_i, v_i\right) \mapsto \left(u_{1-i},v_{1-i}\right).\] le domaine de \(l^i_{a=b}\) et l'image de \(a\simeq^+_i b.\) On  définit aussi&nbsp;:
+                     \[
+                     a\simeq_* b:=\left(a\simeq^* b\right)^{-1}.
+                     \] </p>
+                     <p>
+                     On définit les projecteurs&nbsp;:  
+                     \[\pi^c_{a=b}:=\bigcup_i \left(
+                     a \simeq_i b \rightarrow
+                     a \simeq_{1-i} b\right)\] qui 
+                     est constant sur \(\left\{z;a\left(z\right)=b\left(z\right)\right\}
+                     \) 
+                     et injective
+                     sur son complément.
+                     On peut voir sa comme la relation \(a\neq b\rightarrow F\) est la relation \(a=b\rightarrow F\) peut être vue comme \(a\simeq_1 b\) 
+                     puis \(\pi^c_{a=b} a\simeq_1 b\rightarrow \bot \)
+                     est injective 
+                     c'est donc en quelques sortes une hypothèse de la forme 
+                     \(a= b\) 
+                     puis 
+                     \(\pi^c_{a=b} \rightarrow \bot\) est injective sur l'image de \(a\simeq _1 b\) c'est donc de la que c'est une hypothèse de la forme \(a=b\) </p>
+                    <p class='noteinf' >
+                      On vas 
+                    expliquer 
+                    plus justement
+                    ce que 
+                    cela veut dire on 
+                    voit que
+                    faire des
+                    hypothèse c'est 
+                    réduire le 
+                    domaine, faire des
+                    négation 
+                    et des conclusions
+                    c'est 
+                    d'une par 
+                    commuter 
+                    constante/injection 
+                    puis faire
+                    des hypothèse
+                    c'est
+                    commuter
+                    domaine/injection.
+                    
+                    Donc ce qui 
+                    voudrait 
+                    dire une conclusion
+                    de non.. 
+                    c'est commuter
+                    domaine/constante
+                    donc 
+                    conclure
+                    non 
+                    c'est prouver pour 
+                    tout 
+                    tu est  égal à...
+                    </p>
+                    On vas faire un tableau de domaine/constante/injection on dispose la valeurs \(1\) si la composition de la ligne et de la colonne et injection \(0\) si elles et constante sinon \(\bot\top\).
+                    <table>
+                      <tr><td>\</td> <td>\(\simeq^+_0\) </td>
+                      <td>\(\simeq^+_1\) </td>
+                      <td>\(\simeq_0\)</td>
+                    <td>\(\simeq_1\) </td>
+                    <td>\(\simeq^*\) </td>
+                   <td>\(\simeq_*\)</td> 
+                    
+                    <td>\(l^0\)</td><td>\(l^1\)</td></tr>
+                      <tr><td>\(\simeq^+_0\) </td><td>\(\left\{\emptyset\right\}\) </td><td>\(\left\{\emptyset\right\}\) </td><td>\(1_{a\neq b}\)</td><td>\(1_{a=b}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(1_{a\neq b}\) </td><td>\(\left\{\emptyset\right\}\)</td><td>\(\left\{\emptyset\right\}\)</td></tr>
+                      <tr><td>\(\simeq^+_1\) </td><td>\(\left\{\emptyset \right\} \) </td><td>\(\left\{\emptyset \right\} \) </td><td>\(1_{a\neq b}\) </td><td>\(1_{a=b}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(1_{a=b}\)</td><td>\(\left\{\emptyset\right\}\)
+                      </td><td>\(\left\{\emptyset\right\}\)</td></tr>
+                      <tr><td>\(\simeq_0\)</td>
+                      <td>\(\left\{\emptyset\right\}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(0_{a\neq b} \) </td><td>
+                        \(\left\{\emptyset\right\}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(0_{a\neq b}\)</td><td>\(\left\{\emptyset\right\}\)
+                      </td><td>\(\left\{\emptyset\right\}\)</td></tr>
+                    <tr><td>\(\simeq_1\) </td>
+                    <td>\(\left\{\emptyset\right\}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(0_{a\neq b}\)
+                    </td><td>
+                      \(1_{a=b}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(1_{a=b}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(\left\{\emptyset\right\}\)</td></tr>
+                    <tr><td>\(\simeq^*\) </td><td>\(\left\{\emptyset\right\}\)</td><td >\(\left\{\emptyset\right\}\)</td><td>\(1_{a\neq b}\) </td><td>\(1_{a\neq b}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(1_*\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(\left\{\emptyset\right\}\)
+                    </td>
+                    </tr>
+                    <tr><td>\(\simeq_*\)</td><td>\(1_{a\neq b} \) </td><td>\(1_{a=b}\)</td><td >\(\left\{\emptyset\right\}\)</td><td >\(\left\{\emptyset\right\}\)</td><td>\(1^*\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(
+                    1_{\mathrm{Im}\left( \simeq^+_0\right)} \)</td><td>\(1_{\mathrm{Im}
+                    \left(\simeq^+_1\right)} \) </td></tr>
+                    <tr><td>\(l^0\)</td><td>\(1_{a\neq b}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(1_{a\neq b}\) </td><td>
+                       \(\left\{\emptyset\right\}\) </td>
+                       <td>\(\left\{\emptyset
+                       \right\}\)</td>
+                       <td>\(1_{\mathrm {Im}\left(\simeq^+_1\right)} \)</td></tr>
+                    <tr>
+                      <td>\(l^1\)</td><td>\(\left\{\emptyset\right\}\) </td><td>\(1_{a=b}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(\left\{\emptyset\right\}\)</td><td
+                      >\(1_{a=b}\)</td><td>\(\left\{\emptyset\right\}\)</td><td>\(1_{\mathrm{Im}\left(\simeq^+_0\right)} \)</td><td>\(\left\{\emptyset\right\}\)</td></tr>
+                    </table>
+                    On vas étudié le cas de \(y_{i, j} :=\simeq^+_i\circ \simeq_j\) qui correspond au tableau suivant&nbsp;:
+                    <table>
+                    <tr>
+                      <td>\</td>
+                      <td>0</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                       <td>0</td>
+                       <td>\(1_{a\neq b} \)</td>
+                       <td>\(1_{a=b}\)</td>
+                    </tr>
+                    <tr>
+                       <td>1</td>
+                       <td>\(1_{a\neq b} \)</td>
+                       <td>\(1_{a=b}\)</td>
+                    </tr>
+                   
+                    </table>  le cas de \(y_{01}\)
+                    correspond à l'hypothèse \(a\neq b\) et le cas \(y_{10}\) correspond à l'hypothèse \(a=b.\) C'est deux exemples qui ne sont pas des conjonction au sens de la composition, mais \(\simeq^+_0\) correspond à l'hypothèse \(a\neq b\) et \(\simeq^+_1\) à l'hypothèse \(a=b\) et puis \(\simeq_0\) correspond à l'hypothèse \(\left(a=b\right)\rightarrow \bot\) mais à pas \(a\neq b\) on peux faire une différence entre ces deux hypothèses à l'aide des sequent par exemple&nbsp;: \[
+                    \frac{a=b\vdash \bot_{a=b}}{\vdash a\neq b}
+                    \] veut dire que que si je prouve que \(a=b\) est représenté par une constante alors je peu prouver que \(a\neq b\) et représente par une injection sur le domaine des \(\left\{z;a\left(z\right)=b\left(z\right) \right\} \) , tandis que
+                    \[
+                    \frac{a\neq b\vdash \bot_{a=b}}{
+                    \vdash a=b} 
+                    \] 
+                    veux dire que si \(a\neq b\) est représenté par 
+                    une constante alors \(a=b\) est représenté par une injection de domaine \(\left\{z;a\left(z\right)=a
+                    \left(z\right)\right\}\) on peut faire une règle de déduction plus adaptée de la façon suivante&nbsp;: \[
+                    \frac{\Gamma, A\rightarrow \bot_{E^\prime} \vdash \bot_E\;\;\;\top_{E^\prime}\vdash \Gamma \;\;\;E \subseteq E^\prime }{
+                    \Gamma\vdash A
+                   }_{\nu^+} 
+                    \] 
+                    avec la condition \(E^\prime=E\) on la nomme \(\nu^0\) on a en suite la règle&nbsp;:
+                    \[
+                    \frac{\Gamma, A\vdash A\rightarrow \bot_{E}\;\;\;\top_{E^\prime}\vdash \Gamma\;\;\;E \subseteq E^\prime }{\Gamma\vdash A\rightarrow
+                    \bot_E}_{\nu_+} 
+                    \] 
+                    avec la condition \(E^\prime=E\) on la note \(\nu_0\)
+                    <div class='noteinf'>
+                      il est à préciser que les règle \(v^+\) et \(v_-\) sont en faite des principes, On ( je ) vais énoncer les un systèmes de principes de règles complet&nbsp;:
+                      <h4>les principes </h4>
+                      <div style='color:white;border:solid 1px grey;display;block;'>
+                      \[
+          \frac{\Gamma\rightarrow \left(A\rightarrow B\right)\; \text{est injective}}{\Gamma, A\vdash B}
+                      \] 
+                      c'est le principe de déduction. 
+                      Ensuite 
+                      si \(P\) est un prédicat alors 
+                      alors la traduction de \(T\vdash_{LK} P\) est l'une de ces quatre représentations suivantes&nbsp;: <ul><li>\[\top_{\underline T_0}\vdash \top_{\underline P} \]</li><li>
+                        \[\top_{\underline T_0}\vdash \top_{\underline P} \]</
+                      </li><li>  \[
+                      \bot_{\underline T^c_0}\vdash \bot_{\underline P^c} \]  </li><li> \[\bot_{\underline T^c_0}\vdash \top_{\underline P^c}\]</li>
+                      <li>  \[
+                      \top_{\underline P^c}\vdash \bot_{\underline T^c_0} \]  </li><li> \[\top_{\underline P^c}\vdash \bot _{\underline T^c_0}\]</li>
+                      </ul>
+                      où \(T_0\) correspond à un ensemble fini de formule telles que \(T_0\vdash_{LK} P\) ici j'ai souligné pour désigner la valeur de \(T_0\) et de \(P\) dans n'importe quel modèle de réalisant \(T\) 
+                      </div>
+                    </div>
+                    puis on définit&nbsp;:
+                    \[
+                    \frac{\Gamma, \bot_P\vdash A\;\;\; \Gamma, A\vdash\bot_Q}{
+                    \Gamma, \bot_{Q}\vdash A\rightarrow \bot_P
+                   }{\cap_\bot} 
+                    \] <!--HALT-->
+                    lorsque on utilise cette règle 
+                    On peut dire que lorsque \(\bot_P\) est 
+                    utilisé 
+                    en 
+                    hypothèse
+                    on 
+                    fait
+                    une inhibition
+                    sur \(P\)
+                    c'est à dire que 
+                    l'on ne 
+                    suppose
+                    plus sur \(P\) 
+                    sauf 
+                    que 
+                    l'on 
+                    restreint 
+                    les domaines
+                    par \(P\)
+                    <span class='noteinf '>(
+                    <abbr>i.e.</abbr>
+                    On  peut ce
+                    donner en 
+                    fonction de \(\left(\Gamma, A\right)\) la collection suivante&nbsp;:  \[\phi\left(\Gamma, A;Q\right) :=\left\{Z\vert \Gamma, \bot_Z\vdash A\;\;\; \Gamma, A\vdash\bot_Q
+                    \right\}\] des ensemble 
+                    qui 
+                    sont en 
+                    désfourche
+                    sur \(Q\)
+                    en 
+                    utilisant la règle \(\cap_\bot\) et si 
+                    c'est une 
+                    collection qui ne contient 
+                    pas \(Q\)
+                    on dit
+                    que \(Q\) 
+                    est non 
+                    binaire sur \(\left(\Gamma, A \right)\) on peut que si \(Q\) est non binaire, alors on  a&nbsp;: 
+                    \[
+                    \Gamma\rightarrow \left( \bot_Q\rightarrow A\right)\text{ ou }\Gamma\rightarrow \left(A\rightarrow \bot_Q\right)\text{ non injective sur le domaine de}\left(\Gamma, A, \bot_Q\right). 
+                    \] donc  on doit avoir forcément \(\Gamma\vdash A\) non injective sur ce même domaine.
+                    On peut vérifiera cette relation dans l'un des preuve des propriétés de cohérence \(\LK.\) 
+                    ) </span> 
+             <h4>la  cohérence \(\LK\) de \(\cap_\bot\)</h4>
+             <div>
+               \[\Gamma\rightarrow A\text{ strictement  injective sur le domaine }\left(\Gamma, A, Q\right)\Rightarrow Q\in\phi\left(\Gamma, A;Q\right)
+               \] 
+               <h5>[ PREUVE ]</h5>
+               <div>
+                ...
+               </div>
+               <!--mbda fracservi 1 aveunu reuaimue 92358lp--> 
+             </div>
+             <h4>une algèbre de bool dans un cosimplex [ brouillon ]</h4>
+             <div>
+               On se donne un ensemble \(A\) puis une partie \(J\subseteq P\) alors on définit \[f_J:=\lambda x\in A^P.\lambda i\in P. \begin{cases}
+               x_i \text{ si } i\in J\\
+               0_A \text{ sinon.} 
+                  \end{cases} 
+                  \] c'est une application de \(A^P \) vers lui-même.
+                  On a donc un cosimplex sur \(A^P\) et une algèbre de bool formés des \(\simeq_{f_J};J\subseteq P\) 
+                  On peut même dire que 
+                  \(\circ\) peut être vue comme un inf.
+                  On vas vérifier cela, 
+                  On a \(X\simeq_{J} Y\) si est seulement 
+                  \(X_j=Y_j;j\in J \) 
+                  déjà \(\simeq_{J} \sqcap\simeq_{f_K}=\simeq_{f_{J\cap K}}.\) puis La clôture transitive de \( X R_{J, K} Y:=X\simeq_{J} Y\text{ ou }X\simeq_{K} Y\) est donner par \(X R_{J, K} Z_{1}...Z_{p} R_{J, K} Y\) 
+                  cela équivaut \[\bigwedge_{p} \left[ Z_{pj} = Z_{p+1,j} \vee Z_{pk}=Z_{p+1,k}\right] \Leftrightarrow X\simeq_{f_{J \cup K}}Y.\] on peut formuler autrement la relation 
+                  \[\exists Z\in A^P\left(X\simeq_{J} Z\vee Z\simeq_{K} Y\right)\] qui équivalente \[\left[\exists Z\in A^P\left(X_j=Z_j\leftrightarrow j\in J\right)\vee \exists Z\in A^P\left(Y_k=Z_k\leftrightarrow j\in K\right)\right]. \] En suite on peut constater que 
+                  \[X_l=Y_l\leftrightarrow \left(l\in K\vee l\in J\right)
+                  \] 
+                  équivalente à \[
+                  X_l=Y_l\leftrightarrow l \in J\cup K
+                  \] On va vérifier avec la table de vérité du schéma suivant&nbsp;: 
+                  pour chaque fonction \(f\) d'un ensemble \(U\) vers \(\mathbb{B}\) 
+                  On a \[H_{f, P, Q} :=f\left(l\right) \leftrightarrow \left(P\left(l\right) \vee Q\left(l\right)\right) \] 
+                          ssi \[H^\prime _{f, P, Q}:=\left[f\left(l\right)\leftrightarrow P\left(l\right) \right]\vee \left[f\left(l\right)\leftrightarrow Q\left(l\right)\right]\] 
+                  
+             </div>
+             
+                    </div>
+                    
+                    
+                    
+              </div>
+              
+            </div>
+          </div>
+          <!--UNICODE-->
+          </div>
+          
+        
+        
+        <h3>l'algorithme&nbsp;:</h3>
+      </div>
+    </div>
+    <div>
+      
+      #sub_main#
+    </div>
+      <div>
+        <pre>#sub_dbg#</pre>
+      </div>
+  </div> 
+  <div style='margin-top: 33px;'>
+    
+  
+  <h5 style="margin-top:33px;">IMPORTANT : </h5>
+     <div class='lifeinfo'>
+       The Mathilde fan clubs
+     </div>
+  </div>
+</body>
+
+</html>
