@@ -2,7 +2,7 @@
 Attention mes brouillon sont plein d'erreurs 
 Je vais publier les prochain ce soir. 
 Le code de l'algo prety-cut arrive d'ici mois d'une 
-Semaine. C'est pour cela que sur mai prochain brouillon
+Semaine. C'est pour cela que sur mes prochain brouillon
 Seul ce sujets et traité et corrigé.. 
 MERCI. 
 JE VOULAIS RIEN PUBLIER MAIS JE VAIS UTILISÉ LE PROTOCOLE 
